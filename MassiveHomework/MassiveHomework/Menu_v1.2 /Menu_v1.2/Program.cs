@@ -6,9 +6,6 @@ namespace Menu_v1
 {
     class MainClass
     {
-        //Avr si si funciona tis wea
-        //NICEEEE
-        //Si funciona tis wea
         public static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -25,6 +22,7 @@ namespace Menu_v1
                 Mn1[3] = "Fisica";
                 Mn1[4] = "Salir";
                 c = Menu(Mn1, x);
+
                 switch (c)
                 {
                     case 1:

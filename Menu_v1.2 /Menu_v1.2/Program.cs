@@ -6,6 +6,7 @@ namespace Menu_v1
 {
     class MainClass
     {
+        //Avr si si funciona tis wea
         public static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;

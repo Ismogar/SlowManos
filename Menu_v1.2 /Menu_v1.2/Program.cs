@@ -23,7 +23,6 @@ namespace Menu_v1
                 Mn1[3] = "Fisica";
                 Mn1[4] = "Salir";
                 c = Menu(Mn1, x);
-
                 switch (c)
                 {
                     case 1:

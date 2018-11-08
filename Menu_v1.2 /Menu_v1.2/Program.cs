@@ -78,7 +78,7 @@ namespace Menu_v1
                                                 {
                                                     for (int j = 0; j < y; j++)
                                                     {
-                                                        Console.SetCursorPosition(2 * j, (i + 6)*2);
+                                                        Console.SetCursorPosition(2 * j, (i + 2)*2);
                                                         m[j, i] = int.Parse(Console.ReadLine());
                                                     }
                                                 }

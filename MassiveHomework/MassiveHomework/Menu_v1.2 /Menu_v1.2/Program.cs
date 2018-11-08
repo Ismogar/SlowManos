@@ -71,13 +71,13 @@ namespace Menu_v1
                                                 z = int.Parse(Console.ReadLine());
                                                 Console.Write("Cantidad de Columnas: ");
                                                 y = int.Parse(Console.ReadLine());
-                                                int[,] m = new int[y, z];
+                                                int[,] m1 = new int[y, z];
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y; j++)
                                                     {
                                                         Console.SetCursorPosition(2 * j, (i + 6)*2);
-                                                        m[j, i] = int.Parse(Console.ReadLine());
+                                                        m1[j, i] = int.Parse(Console.ReadLine());
                                                     }
                                                 }
                                                 break;

@@ -7,8 +7,6 @@ namespace Menu_v1
     class MainClass
     {
         //Avr si si funciona tis wea
-        //NICEEEE
-        //Si funciona tis wea
         public static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -25,6 +23,7 @@ namespace Menu_v1
                 Mn1[3] = "Fisica";
                 Mn1[4] = "Salir";
                 c = Menu(Mn1, x);
+
                 switch (c)
                 {
                     case 1:
@@ -66,22 +65,55 @@ namespace Menu_v1
                                         switch (c)
                                         {
                                             case 1:
+
+                                                Console.CursorVisible = true;
                                                 int y, z;
                                                 Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
                                                                   "columnas y filas pueden sumarse");
+                                                Console.ForegroundColor = ConsoleColor.Green;
                                                 Console.Write("Cantidad de filas: ");
                                                 z = int.Parse(Console.ReadLine());
                                                 Console.Write("Cantidad de Columnas: ");
                                                 y = int.Parse(Console.ReadLine());
-                                                int[,] m = new int[y, z];
+                                                int[,] m1 = new int[y, z];
+                                                int[,] m2 = new int[y, z];
+                                                m1 = AsignarValorMatriz(y, z);
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y; j++)
                                                     {
-                                                        Console.SetCursorPosition(2 * j, (i + 2)*2);
-                                                        m[j, i] = int.Parse(Console.ReadLine());
+                                                        Console.SetCursorPosition(3 * j, (i + 2) * 2);
+                                                        Console.Write(" ");
                                                     }
                                                 }
+                                                m2 = AsignarValorMatriz(y, z);
+                                                /*for (int i = 0; i < z; i++)
+                                                {
+                                                    for (int j = 0; j < y; j++)
+                                                    {
+                                                        Console.SetCursorPosition(2 * j, (i + 2) * 2);
+                                                        m2[j, i](formato para mostrar de la forma adecuada) = int.Parse(Console.ReadLine());
+                                                    }
+                                                }*/
+                                                for (int i = 0; i < z; i++)
+                                                {
+                                                    for (int j = 0; j < y; j++)
+                                                    {
+                                                        Console.SetCursorPosition(3 * j, (i + 2) * 2);
+                                                        Console.Write(" ");
+                                                    }
+                                                }
+                                                for (int i = 0; i < z; i++)
+                                                {
+                                                    for (int j = 0; j < y; j++)
+                                                    {
+                                                        m1[j, i] += m2[j, i];
+                                                        Console.SetCursorPosition(3 * j, (i + 2) * 2);
+                                                        Console.Write(m1[j, i]);
+                                                    }
+                                                }
+                                                Console.CursorVisible = false;
+                                                Console.ReadKey();
                                                 break;
 
                                         }
@@ -196,6 +228,21 @@ namespace Menu_v1
                 }
             } while (T != ConsoleKey.Enter);
             return c;
+        }
+        static int[,] AsignarValorMatriz(int x, int y)
+        {
+            int[,] m = new int[x, y];
+            for (int i = 0; i < y; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    string kk;
+                    Console.SetCursorPosition(3 * j, (i + 2) * 2);
+                    kk = Console.ReadLine();
+                    m[j, i] = Convert.ToInt32(kk);
+                }
+            }
+            return m;
         }
 
     }

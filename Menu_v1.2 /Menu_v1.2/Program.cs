@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using static System.Convert;
 using System.Threading;
 
@@ -29,7 +29,7 @@ namespace Menu_v1
                         x = 5;
                         string[] Mn2 = new string[x];
                         Mn2[0] = "Elige la opcion que mas te convenga";
-                        Mn2[1] = "XD";
+                        Mn2[1] = "Incognitas";
                         Mn2[2] = "Vectores";
                         Mn2[3] = "Matrices";
                         Mn2[4] = "Volver";

@@ -1,0 +1,12 @@
+/Users/ernesto/Projects/Menu_v1.2/Menu_v1.2/bin/Debug/Menu_v1.2.exe
+/Users/ernesto/Projects/Menu_v1.2/Menu_v1.2/bin/Debug/Menu_v1.2.pdb
+/Users/ernesto/Projects/Menu_v1.2/Menu_v1.2/obj/x86/Debug/Menu_v1.2.csprojAssemblyReference.cache
+/Users/ernesto/Projects/Menu_v1.2/Menu_v1.2/obj/x86/Debug/Menu_v1.2.csproj.CoreCompileInputs.cache
+/Users/ernesto/Projects/Menu_v1.2/Menu_v1.2/obj/x86/Debug/Menu_v1.2.exe
+/Users/ernesto/Projects/Menu_v1.2/Menu_v1.2/obj/x86/Debug/Menu_v1.2.pdb
+/Users/ninos/Projects/Menu_v1.2 /Menu_v1.2/obj/x86/Debug/Menu_v1.2.csprojAssemblyReference.cache
+/Users/ninos/Projects/Menu_v1.2 /Menu_v1.2/obj/x86/Debug/Menu_v1.2.csproj.CoreCompileInputs.cache
+/Users/ninos/Projects/Menu_v1.2 /Menu_v1.2/obj/x86/Debug/Menu_v1.2.exe
+/Users/ninos/Projects/Menu_v1.2 /Menu_v1.2/obj/x86/Debug/Menu_v1.2.pdb
+/Users/ninos/Projects/Menu_v1.2 /Menu_v1.2/bin/Debug/Menu_v1.2.exe
+/Users/ninos/Projects/Menu_v1.2 /Menu_v1.2/bin/Debug/Menu_v1.2.pdb

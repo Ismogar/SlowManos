@@ -94,6 +94,11 @@ namespace Menu_v1
                                                         {
                                                             Console.SetCursorPosition(((2 * j) + o) - 1, (i + 2) * 2);
                                                             Console.Write("|");
+                                                            if (i + 1 != y)
+                                                            {
+                                                                Console.SetCursorPosition(((2 * j) + o) - 1, ((i + 2) * 2) + 1);
+                                                                Console.Write("|");
+                                                            }
                                                         }
                                                         m1[j, i] += m2[j, i];
                                                         Console.SetCursorPosition((2 * j) + o, (i + 2) * 2);
@@ -102,6 +107,11 @@ namespace Menu_v1
                                                         {
                                                             Console.SetCursorPosition(((2 * j) + o) + 1, (i + 2) * 2);
                                                             Console.Write("|");
+                                                            if (i + 1 != y)
+                                                            {
+                                                                Console.SetCursorPosition(((2 * j) + o) + 1, ((i + 2) * 2) + 1);
+                                                                Console.Write("|");
+                                                            }
                                                         }
                                                     }
                                                 }

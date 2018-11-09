@@ -77,11 +77,13 @@ namespace Menu_v1
                                                 z = int.Parse(Console.ReadLine());
                                                 Console.Write("Cantidad de Columnas: ");
                                                 y = int.Parse(Console.ReadLine());
-                                                m1 = AsignarValorMatriz(y, z, o);
+                                                m1 = AsignarValorMatriz(y, z);
+                                                m2 = AsignarValorMatriz(y, z);
+                                                EscribirValorMatriz(m1, y, z, o);
                                                 Console.SetCursorPosition(o + (y * 2), 4 + (z - 1));
                                                 Console.Write("+");
                                                 o = (2 * y) + 3;
-                                                m2 = AsignarValorMatriz(y, z, o);
+                                                EscribirValorMatriz(m2, y, z, o);
                                                 Console.SetCursorPosition(o + (y * 2), 4 + (z - 1));
                                                 Console.Write("=");
                                                 o += o;
@@ -271,14 +273,37 @@ namespace Menu_v1
             } while (T != ConsoleKey.Enter);
             return c;
         }
-        static int[,] AsignarValorMatriz(int x, int y, int z)
+
+        static int[,] AsignarValorMatriz(int x, int y)
         {
             int[,] m = new int[x, y];
             for (int i = 0; i < y; i++)
             {
                 for (int j = 0; j < x; j++)
                 {
-                    //string kk;
+
+                    Console.SetCursorPosition((2 * j), (i + 2) * 2);
+                    m[j, i] = int.Parse(Console.ReadLine());
+                }
+            }
+            for (int i = 0; i < y; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    Console.SetCursorPosition((2 * j), (i + 2) * 2);
+                    Console.Write(" ");
+                }
+            }
+            return m;
+        }
+
+        static void EscribirValorMatriz(int[,] m, int x, int y, int z)
+        {
+
+            for (int i = 0; i < y; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
                     if (j == 0)
                     {
                         Console.SetCursorPosition(((2 * j) + z) - 1, (i + 2) * 2);
@@ -289,7 +314,6 @@ namespace Menu_v1
                             Console.Write("|");
                         }
                     }
-                    //kk = Console.ReadLine();
                     if (j + 1 == x)
                     {
                         Console.SetCursorPosition(((2 * j) + z) + 1, (i + 2) * 2);
@@ -301,10 +325,9 @@ namespace Menu_v1
                         }
                     }
                     Console.SetCursorPosition((2 * j) + z, (i + 2) * 2);
-                    m[j, i] = int.Parse(Console.ReadLine());
+                    Console.Write(m[j, i]);
                 }
             }
-            return m;
         }
     }
 }

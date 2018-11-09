@@ -44,7 +44,6 @@ namespace Menu_v1
                                 break;
                             case 3:
                                 x = 4;
-                                int g;
                                 string[] Mm1 = new string[x];
                                 Mm1[0] = "Elige la opcion que mas te convenga";
                                 Mm1[1] = "Operaciones con matrices";
@@ -79,29 +78,29 @@ namespace Menu_v1
                                                 Console.Write("Cantidad de Columnas: ");
                                                 y = int.Parse(Console.ReadLine());
                                                 m1 = AsignarValorMatriz(y, z, o);
-                                                Console.SetCursorPosition((3 * y) + 1, 4 + (z / 2));
+                                                Console.SetCursorPosition(o + (y * 2), 4 + (z - 1));
                                                 Console.Write("+");
-                                                o = (3 * y)*2;
+                                                o = (2 * y) + 3;
                                                 m2 = AsignarValorMatriz(y, z, o);
-                                                Console.SetCursorPosition(((3 * y) + 2) * 2, 4 + (z / 2));
+                                                Console.SetCursorPosition(o + (y * 2), 4 + (z - 1));
                                                 Console.Write("=");
                                                 o += o;
-                                               
+
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y; j++)
                                                     {
                                                         if (j == 0)
                                                         {
-                                                            Console.SetCursorPosition(((3 * j) + o) - 1, (i + 2) * 2);
+                                                            Console.SetCursorPosition(((2 * j) + o) - 1, (i + 2) * 2);
                                                             Console.Write("|");
                                                         }
                                                         m1[j, i] += m2[j, i];
-                                                        Console.SetCursorPosition((3 * j) + o, (i + 2) * 2);
+                                                        Console.SetCursorPosition((2 * j) + o, (i + 2) * 2);
                                                         Console.Write(m1[j, i]);
-                                                        if (j + 1 == y) 
+                                                        if (j + 1 == y)
                                                         {
-                                                            Console.SetCursorPosition(((3 * j) + o) + 1, (i + 2) * 2);
+                                                            Console.SetCursorPosition(((2 * j) + o) + 1, (i + 2) * 2);
                                                             Console.Write("|");
                                                         }
                                                     }
@@ -272,22 +271,30 @@ namespace Menu_v1
                     //string kk;
                     if (j == 0)
                     {
-                        Console.SetCursorPosition(((3 * j) + z) - 1, (i + 2) * 2);
+                        Console.SetCursorPosition(((2 * j) + z) - 1, (i + 2) * 2);
                         Console.Write("|");
+                        if (i + 1 != y)
+                        {
+                            Console.SetCursorPosition(((2 * j) + z) - 1, ((i + 2) * 2) + 1);
+                            Console.Write("|");
+                        }
                     }
                     //kk = Console.ReadLine();
                     if (j + 1 == x)
                     {
-                        Console.SetCursorPosition(((3 * j) + z) + 1, (i + 2) * 2);
+                        Console.SetCursorPosition(((2 * j) + z) + 1, (i + 2) * 2);
                         Console.Write("|");
+                        if (i + 1 != y)
+                        {
+                            Console.SetCursorPosition(((2 * j) + z) + 1, ((i + 2) * 2) + 1);
+                            Console.Write("|");
+                        }
                     }
-                    Console.SetCursorPosition((3 * j) + z, (i + 2) * 2);
+                    Console.SetCursorPosition((2 * j) + z, (i + 2) * 2);
                     m[j, i] = int.Parse(Console.ReadLine());
-
                 }
             }
             return m;
         }
-
     }
 }

@@ -96,13 +96,13 @@ namespace Menu_v1
                                                             Console.Write("|");
                                                         }
                                                         m1[j, i] += m2[j, i];
-                                                        Console.SetCursorPosition((3 * j) + o, (i + 2) * 2);
-                                                        Console.Write(m1[j, i]);
-                                                        if (j == y + 1)
+                                                        if (j + 1 == y)
                                                         {
                                                             Console.SetCursorPosition(((3 * j) + o) + 1, (i + 2) * 2);
                                                             Console.Write("|");
                                                         }
+                                                        Console.SetCursorPosition((3 * j) + o, (i + 2) * 2);
+                                                        Console.Write(m1[j, i]);
                                                     }
                                                 }
                                                 Console.CursorVisible = false;

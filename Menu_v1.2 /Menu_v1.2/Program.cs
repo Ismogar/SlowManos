@@ -81,11 +81,12 @@ namespace Menu_v1
                                                 m1 = AsignarValorMatriz(y, z, o);
                                                 Console.SetCursorPosition((3 * y) + 1, 4 + (z / 2));
                                                 Console.Write("+");
-                                                o = y * y;
+                                                o = (3 * y)*2;
                                                 m2 = AsignarValorMatriz(y, z, o);
                                                 Console.SetCursorPosition(((3 * y) + 2) * 2, 4 + (z / 2));
                                                 Console.Write("=");
-                                                o *= 2;
+                                                o += o;
+                                               
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y; j++)
@@ -96,13 +97,13 @@ namespace Menu_v1
                                                             Console.Write("|");
                                                         }
                                                         m1[j, i] += m2[j, i];
-                                                        if (j + 1 == y)
+                                                        Console.SetCursorPosition((3 * j) + o, (i + 2) * 2);
+                                                        Console.Write(m1[j, i]);
+                                                        if (j + 1 == y) 
                                                         {
                                                             Console.SetCursorPosition(((3 * j) + o) + 1, (i + 2) * 2);
                                                             Console.Write("|");
                                                         }
-                                                        Console.SetCursorPosition((3 * j) + o, (i + 2) * 2);
-                                                        Console.Write(m1[j, i]);
                                                     }
                                                 }
                                                 Console.CursorVisible = false;

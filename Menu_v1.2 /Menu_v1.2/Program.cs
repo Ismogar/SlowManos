@@ -57,7 +57,7 @@ namespace Menu_v1
                                         x = 6;
                                         string[] MO = new string[x];
                                         int y1 = 1, y2 = 1, z = 1;
-                                        int o = 1;
+                                        int o = 1, cx;
                                         int[,] m1 = new int[y1, z];
                                         int[,] m2 = new int[y1, z];
                                         MO[0] = "Elije la opcion que mas te cnovenga";
@@ -73,7 +73,7 @@ namespace Menu_v1
                                             case 1:
                                                 Console.CursorVisible = true;
                                                 Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
-                                                                  "columnas y filas pueden sumarse");
+                                                                  "columnas y filas pueden restarse");
                                                 Console.ForegroundColor = ConsoleColor.Green;
                                                 Console.Write("Cantidad de filas: ");
                                                 z = int.Parse(Console.ReadLine());
@@ -82,14 +82,15 @@ namespace Menu_v1
                                                 m1 = AsignarValorMatriz(y1, z);
                                                 m2 = AsignarValorMatriz(y1, z);
                                                 EscribirValorMatriz(m1, y1, z, o);
+                                                cx = 2 * TamañoNumero(m1, y1, z);
                                                 Console.SetCursorPosition(o + (y1 * 2), 4 + (z - 1));
                                                 Console.Write("+");
-                                                o = (2 * y1) + 3;
+                                                o = (cx * y1) + 3;
                                                 EscribirValorMatriz(m2, y1, z, o);
                                                 Console.SetCursorPosition(o + (y1 * 2), 4 + (z - 1));
                                                 Console.Write("=");
-                                                o += o;
-
+                                                cx = 2 * TamañoNumero(m2, y1, z);
+                                                o += (cx * y1) + 3;
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y1; j++)
@@ -102,7 +103,6 @@ namespace Menu_v1
                                                 Console.ReadKey();
                                                 break;
                                             case 2:
-                                                int mm;
                                                 Console.CursorVisible = true;
                                                 Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
                                                                   "columnas y filas pueden restarse");
@@ -114,13 +114,15 @@ namespace Menu_v1
                                                 m1 = AsignarValorMatriz(y1, z);
                                                 m2 = AsignarValorMatriz(y1, z);
                                                 EscribirValorMatriz(m1, y1, z, o);
+                                                cx = 2 * TamañoNumero(m1, y1, z);
                                                 Console.SetCursorPosition(o + (y1 * 2), 4 + (z - 1));
                                                 Console.Write("-");
-                                                o = (2 * y1) + 3;
+                                                o = (cx * y1) + 3;
                                                 EscribirValorMatriz(m2, y1, z, o);
                                                 Console.SetCursorPosition(o + (y1 * 2), 4 + (z - 1));
                                                 Console.Write("=");
-                                                o += o;
+                                                cx = 2 * TamañoNumero(m2, y1, z);
+                                                o += (cx * y1) + 3;
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y1; j++)
@@ -133,6 +135,7 @@ namespace Menu_v1
                                                 Console.ReadKey();
                                                 break;
                                             case 3:
+                                                int mm;
                                                 Console.CursorVisible = true;
                                                 Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
                                                                   "filas pueden multiplicarse");
@@ -147,13 +150,15 @@ namespace Menu_v1
                                                 y2 = int.Parse(Console.ReadLine());
                                                 m2 = AsignarValorMatriz(y2, z);
                                                 EscribirValorMatriz(m1, y1, z, o);
-                                                Console.SetCursorPosition(o + (y1 * 2), 4 + (z - 1));
+                                                cx = 2 * TamañoNumero(m1, y1, z);
+                                                Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                                 Console.Write("X");
-                                                o = (2 * y1) + 3;
+                                                o = (cx * y1) + 3;
                                                 EscribirValorMatriz(m2, y2, z, o);
-                                                Console.SetCursorPosition(o + (y2 * 2), 4 + (z - 1));
+                                                Console.SetCursorPosition(o + (y2 * cx), 4 + (z - 1));
                                                 Console.Write("=");
-                                                o += (2 * y2) + 3;
+                                                cx = 2 * TamañoNumero(m2, y2, z);
+                                                o += (cx * y2) + 3;
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     mm = 0;
@@ -292,7 +297,7 @@ namespace Menu_v1
                 for (int j = 0; j < x; j++)
                 {
 
-                    Console.SetCursorPosition((2 * j), (i + 2) * 2);
+                    Console.SetCursorPosition((3 * j), (i + 2) * 2);
                     m[j, i] = int.Parse(Console.ReadLine());
                 }
             }
@@ -300,7 +305,7 @@ namespace Menu_v1
             {
                 for (int j = 0; j < x; j++)
                 {
-                    Console.SetCursorPosition((2 * j), (i + 2) * 2);
+                    Console.SetCursorPosition((3 * j), (i + 2) * 2);
                     Console.Write(" ");
                 }
             }
@@ -309,35 +314,57 @@ namespace Menu_v1
 
         static void EscribirValorMatriz(int[,] m, int x, int y, int z)
         {
-
+            int c = 2 * TamañoNumero(m, x, y);
             for (int i = 0; i < y; i++)
             {
                 for (int j = 0; j < x; j++)
                 {
                     if (j == 0)
                     {
-                        Console.SetCursorPosition(((2 * j) + z) - 1, (i + 2) * 2);
+                        Console.SetCursorPosition(((c * j) + z) - 1, (i + 2) * 2);
                         Console.Write("|");
                         if (i + 1 != y)
                         {
-                            Console.SetCursorPosition(((2 * j) + z) - 1, ((i + 2) * 2) + 1);
+                            Console.SetCursorPosition(((c * j) + z) - 1, ((i + 2) * 2) + 1);
                             Console.Write("|");
                         }
                     }
                     if (j + 1 == x)
                     {
-                        Console.SetCursorPosition(((2 * j) + z) + 1, (i + 2) * 2);
+                        Console.SetCursorPosition(((c * j) + z) + 1, (i + 2) * 2);
                         Console.Write("|");
                         if (i + 1 != y)
                         {
-                            Console.SetCursorPosition(((2 * j) + z) + 1, ((i + 2) * 2) + 1);
+                            Console.SetCursorPosition(((c * j) + z) + 1, ((i + 2) * 2) + 1);
                             Console.Write("|");
                         }
                     }
-                    Console.SetCursorPosition((2 * j) + z, (i + 2) * 2);
+                    Console.SetCursorPosition((c * j) + z, (i + 2) * 2);
                     Console.Write(m[j, i]);
                 }
             }
+        }
+
+        static int TamañoNumero(int[,] m, int x, int y)
+        {
+            int c = 0;
+            string mS1, mS2;
+            for (int i = 0; i < y; i++)
+            {
+                for (int j = 0; j < x; j++)
+                {
+                    for (int k = 0; k < y; k++)
+                    {
+                        for (int l = 0; l < x; l++)
+                        {
+                            mS1 = m[j, i].ToString();
+                            mS2 = m[l, k].ToString();
+                            c = mS1.Length >= mS2.Length ? mS1.Length : mS2.Length;
+                        }
+                    }
+                }
+            }
+            return c;
         }
     }
 }

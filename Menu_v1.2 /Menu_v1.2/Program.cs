@@ -94,29 +94,8 @@ namespace Menu_v1
                                                 {
                                                     for (int j = 0; j < y; j++)
                                                     {
-                                                        if (j == 0)
-                                                        {
-                                                            Console.SetCursorPosition(((2 * j) + o) - 1, (i + 2) * 2);
-                                                            Console.Write("|");
-                                                            if (i + 1 != z)
-                                                            {
-                                                                Console.SetCursorPosition(((2 * j) + o) - 1, ((i + 2) * 2) + 1);
-                                                                Console.Write("|");
-                                                            }
-                                                        }
                                                         m1[j, i] += m2[j, i];
-                                                        Console.SetCursorPosition((2 * j) + o, (i + 2) * 2);
-                                                        Console.Write(m1[j, i]);
-                                                        if (j + 1 == y)
-                                                        {
-                                                            Console.SetCursorPosition(((2 * j) + o) + 1, (i + 2) * 2);
-                                                            Console.Write("|");
-                                                            if (i + 1 != z)
-                                                            {
-                                                                Console.SetCursorPosition(((2 * j) + o) + 1, ((i + 2) * 2) + 1);
-                                                                Console.Write("|");
-                                                            }
-                                                        }
+                                                        EscribirValorMatriz(m1, y, z, o);
                                                     }
                                                 }
                                                 Console.CursorVisible = false;
@@ -145,33 +124,15 @@ namespace Menu_v1
                                                 {
                                                     for (int j = 0; j < y; j++)
                                                     {
-                                                        if (j == 0)
-                                                        {
-                                                            Console.SetCursorPosition(((2 * j) + o) - 1, (i + 2) * 2);
-                                                            Console.Write("|");
-                                                            if (i + 1 != z)
-                                                            {
-                                                                Console.SetCursorPosition(((2 * j) + o) - 1, ((i + 2) * 2) + 1);
-                                                                Console.Write("|");
-                                                            }
-                                                        }
                                                         m1[j, i] -= m2[j, i];
-                                                        Console.SetCursorPosition((2 * j) + o, (i + 2) * 2);
-                                                        Console.Write(m1[j, i]);
-                                                        if (j + 1 == y)
-                                                        {
-                                                            Console.SetCursorPosition(((2 * j) + o) + 1, (i + 2) * 2);
-                                                            Console.Write("|");
-                                                            if (i + 1 != z)
-                                                            {
-                                                                Console.SetCursorPosition(((2 * j) + o) + 1, ((i + 2) * 2) + 1);
-                                                                Console.Write("|");
-                                                            }
-                                                        }
+                                                        EscribirValorMatriz(m1, y, z, o);
                                                     }
                                                 }
                                                 Console.CursorVisible = false;
                                                 Console.ReadKey();
+                                                break;
+                                            case 3:
+
                                                 break;
                                         }
                                         break;

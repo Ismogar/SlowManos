@@ -53,7 +53,7 @@ namespace Menu_v1
                                 switch (c)
                                 {
                                     case 1:
-                                        x = 5;
+                                        x = 6;
                                         string[] MO = new string[x];
                                         int y = 1, z = 1;
                                         int o = 1;
@@ -63,7 +63,8 @@ namespace Menu_v1
                                         MO[1] = "Suma";
                                         MO[2] = "Resta";
                                         MO[3] = "Multiplicacion";
-                                        MO[4] = "Volver";
+                                        MO[4] = "Division";
+                                        MO[5] = "Volver";
                                         c = Menu(MO, x);
                                         Console.Clear();
                                         switch (c)
@@ -109,7 +110,7 @@ namespace Menu_v1
                                                         {
                                                             Console.SetCursorPosition(((2 * j) + o) + 1, (i + 2) * 2);
                                                             Console.Write("|");
-                                                            if (i + 1 != y)
+                                                            if (i + 1 != z)
                                                             {
                                                                 Console.SetCursorPosition(((2 * j) + o) + 1, ((i + 2) * 2) + 1);
                                                                 Console.Write("|");
@@ -120,45 +121,55 @@ namespace Menu_v1
                                                 Console.CursorVisible = false;
                                                 Console.ReadKey();
                                                 break;
-                                            case 2:/*
+                                            case 2:
                                                 Console.CursorVisible = true;
                                                 Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
-                                                                  "columnas y filas pueden restarse");
+                                                                  "columnas y filas pueden sumarse");
                                                 Console.ForegroundColor = ConsoleColor.Green;
                                                 Console.Write("Cantidad de filas: ");
                                                 z = int.Parse(Console.ReadLine());
                                                 Console.Write("Cantidad de Columnas: ");
                                                 y = int.Parse(Console.ReadLine());
                                                 m1 = AsignarValorMatriz(y, z);
-                                                for (int i = 0; i < z; i++)
-                                                {
-                                                    for (int j = 0; j < y; j++)
-                                                    {
-                                                        Console.SetCursorPosition((3 * j) + 1, (i + 2) * 2);
-                                                        Console.Write(" ");
-                                                    }
-                                                }
                                                 m2 = AsignarValorMatriz(y, z);
-                                                //m2[j, i](formato para mostrar de la forma adecuada) = int.Parse(Console.ReadLine());
+                                                EscribirValorMatriz(m1, y, z, o);
+                                                Console.SetCursorPosition(o + (y * 2), 4 + (z - 1));
+                                                Console.Write("-");
+                                                o = (2 * y) + 3;
+                                                EscribirValorMatriz(m2, y, z, o);
+                                                Console.SetCursorPosition(o + (y * 2), 4 + (z - 1));
+                                                Console.Write("=");
+                                                o += o;
+
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y; j++)
                                                     {
-                                                        Console.SetCursorPosition((3 * j) + 1, (i + 2) * 2);
-                                                        Console.Write(" ");
-                                                    }
-                                                }
-                                                for (int i = 0; i < z; i++)
-                                                {
-                                                    for (int j = 0; j < y; j++)
-                                                    {
+                                                        if (j == 0)
+                                                        {
+                                                            Console.SetCursorPosition(((2 * j) + o) - 1, (i + 2) * 2);
+                                                            Console.Write("|");
+                                                            if (i + 1 != z)
+                                                            {
+                                                                Console.SetCursorPosition(((2 * j) + o) - 1, ((i + 2) * 2) + 1);
+                                                                Console.Write("|");
+                                                            }
+                                                        }
                                                         m1[j, i] -= m2[j, i];
-                                                        Console.SetCursorPosition((3 * j) + 1, (i + 2) * 2);
+                                                        Console.SetCursorPosition((2 * j) + o, (i + 2) * 2);
                                                         Console.Write(m1[j, i]);
+                                                        if (j + 1 == y)
+                                                        {
+                                                            Console.SetCursorPosition(((2 * j) + o) + 1, (i + 2) * 2);
+                                                            Console.Write("|");
+                                                            if (i + 1 != z)
+                                                            {
+                                                                Console.SetCursorPosition(((2 * j) + o) + 1, ((i + 2) * 2) + 1);
+                                                                Console.Write("|");
+                                                            }
+                                                        }
                                                     }
                                                 }
-                                                Console.CursorVisible = false;
-                                                Console.ReadKey();*/
                                                 break;
                                         }
                                         break;

@@ -73,7 +73,7 @@ namespace Menu_v1
                                             case 1:
                                                 Console.CursorVisible = true;
                                                 Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
-                                                                  "columnas y filas pueden restarse");
+                                                                  "columnas y filas pueden sumarse");
                                                 Console.ForegroundColor = ConsoleColor.Green;
                                                 Console.Write("Cantidad de filas: ");
                                                 z = int.Parse(Console.ReadLine());

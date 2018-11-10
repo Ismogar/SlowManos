@@ -17,6 +17,7 @@ namespace Menu_v1
             Console.CursorVisible = false;
             do
             {
+                x = 5;
                 Mn1[0] = "Elige la opcion que mas te convenga";
                 Mn1[1] = "Algebra Lineal";
                 Mn1[2] = "Qumica";
@@ -97,7 +98,7 @@ namespace Menu_v1
                                                         {
                                                             Console.SetCursorPosition(((2 * j) + o) - 1, (i + 2) * 2);
                                                             Console.Write("|");
-                                                            if (i + 1 != y)
+                                                            if (i + 1 != z)
                                                             {
                                                                 Console.SetCursorPosition(((2 * j) + o) - 1, ((i + 2) * 2) + 1);
                                                                 Console.Write("|");
@@ -124,7 +125,7 @@ namespace Menu_v1
                                             case 2:
                                                 Console.CursorVisible = true;
                                                 Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
-                                                                  "columnas y filas pueden sumarse");
+                                                                  "columnas y filas pueden restarse");
                                                 Console.ForegroundColor = ConsoleColor.Green;
                                                 Console.Write("Cantidad de filas: ");
                                                 z = int.Parse(Console.ReadLine());
@@ -140,7 +141,6 @@ namespace Menu_v1
                                                 Console.SetCursorPosition(o + (y * 2), 4 + (z - 1));
                                                 Console.Write("=");
                                                 o += o;
-
                                                 for (int i = 0; i < z; i++)
                                                 {
                                                     for (int j = 0; j < y; j++)
@@ -170,6 +170,8 @@ namespace Menu_v1
                                                         }
                                                     }
                                                 }
+                                                Console.CursorVisible = false;
+                                                Console.ReadKey();
                                                 break;
                                         }
                                         break;

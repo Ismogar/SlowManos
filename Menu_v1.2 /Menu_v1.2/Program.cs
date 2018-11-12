@@ -83,7 +83,7 @@ namespace Menu_v1
                                         asignarZ1:
                                             try
                                             {
-                                                Console.SetCursorPosition(18, 2);
+                                                Console.SetCursorPosition(19, 2);
                                                 z = int.Parse(Console.ReadLine());
                                             }catch(Exception)
                                             {
@@ -96,7 +96,7 @@ namespace Menu_v1
                                         asignarY11:
                                             try
                                             {
-                                                Console.SetCursorPosition(21, 3);
+                                                Console.SetCursorPosition(22, 3);
                                                 y1 = int.Parse(Console.ReadLine());
                                             }
                                             catch (Exception)
@@ -112,12 +112,10 @@ namespace Menu_v1
                                             Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                             Console.Write("+");
                                             o = (cx * y1) + 3;
-                                            Console.ReadKey();
+                                            cx = 2 * TamañoNumero(m2, y1, z);
                                             EscribirValorMatriz(m2, y1, z, o, cx);
                                             Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                             Console.Write("=");
-                                            Console.ReadKey();
-                                            cx = 2 * TamañoNumero(m2, y1, z);
                                             o += (cx * y1) + 3;
                                             for (int i = 0; i < z; i++)
                                             {
@@ -166,24 +164,25 @@ namespace Menu_v1
                                             }
                                             m1 = AsignarValorMatriz(y1, z);
                                             m2 = AsignarValorMatriz(y1, z);
-                                            EscribirValorMatriz(m1, y1, z, o, cx);
                                             cx = 2 * TamañoNumero(m1, y1, z);
+                                            EscribirValorMatriz(m1, y1, z, o, cx);
                                             Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                             Console.Write("-");
                                             o = (cx * y1) + 3;
+                                            cx = 2 * TamañoNumero(m2, y1, z);
                                             EscribirValorMatriz(m2, y1, z, o, cx);
                                             Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                             Console.Write("=");
-                                            cx = 2 * TamañoNumero(m2, y1, z);
                                             o += (cx * y1) + 3;
                                             for (int i = 0; i < z; i++)
                                             {
                                                 for (int j = 0; j < y1; j++)
                                                 {
                                                     m1[j, i] -= m2[j, i];
-                                                    EscribirValorMatriz(m1, y1, z, o, cx);
                                                 }
                                             }
+                                            cx = 2 * TamañoNumero(m1, y1, z);
+                                            EscribirValorMatriz(m1, y1, z, o, cx);
                                             Console.CursorVisible = false;
                                             Console.ReadKey();
                                             goto MenuMaOp;
@@ -237,15 +236,15 @@ namespace Menu_v1
                                                 goto asignarY21;
                                             }
                                             m2 = AsignarValorMatriz(y2, z);
-                                            EscribirValorMatriz(m1, y1, z, o, cx);
                                             cx = 2 * TamañoNumero(m1, y1, z);
+                                            EscribirValorMatriz(m1, y1, z, o, cx);
                                             Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                             Console.Write("X");
                                             o = (cx * y1) + 3;
+                                            cx = 2 * TamañoNumero(m2, y2, z);
                                             EscribirValorMatriz(m2, y2, z, o, cx);
                                             Console.SetCursorPosition(o + (y2 * cx), 4 + (z - 1));
                                             Console.Write("=");
-                                            cx = 2 * TamañoNumero(m2, y2, z);
                                             o += (cx * y2) + 3;
                                             for (int i = 0; i < z; i++)
                                             {
@@ -258,8 +257,9 @@ namespace Menu_v1
                                                 {
                                                     m2[j, i] *= mm;
                                                 }
-                                                EscribirValorMatriz(m2, y2, z, o, cx);
                                             }
+                                            cx = 2 * TamañoNumero(m2, y2, z);
+                                            EscribirValorMatriz(m2, y2, z, o, cx);
                                             Console.CursorVisible = false;
                                             Console.ReadKey();
                                             goto MenuMaOp;
@@ -621,7 +621,8 @@ namespace Menu_v1
                         {
                             mS1 = m[j, i].ToString();
                             mS2 = m[l, k].ToString();
-                            c = mS1.Length >= mS2.Length ? mS1.Length : mS2.Length;
+                            if (mS1.Length > mS2.Length)
+                                c = mS1.Length;
                         }
                     }
                 }

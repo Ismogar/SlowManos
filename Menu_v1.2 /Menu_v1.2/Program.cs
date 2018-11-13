@@ -403,10 +403,11 @@ namespace Menu_v1
                                             break;
                                         case 3://Transpuesta
                                             {
+                                                Console.CursorVisible = true;
                                                 int ym, xm, ec, em;
                                                 Console.ForegroundColor = ConsoleColor.Green;
                                                 Console.Write("Cantidad de filas: ");
-                                            asignarY:
+                                            AsignarY:
                                                 try
                                                 {
                                                     Console.SetCursorPosition(19, 0);
@@ -416,10 +417,10 @@ namespace Menu_v1
                                                 {
                                                     Console.SetCursorPosition(0, 12);
                                                     Console.Write("ERROR: Introduce un numero");
-                                                    goto asignarY;
+                                                    goto AsignarY;
                                                 }
                                                 Console.Write("Cantidad de Columnas: ");
-                                            asignarX:
+                                            AsignarX:
                                                 try
                                                 {
                                                     Console.SetCursorPosition(23, 1);
@@ -429,11 +430,12 @@ namespace Menu_v1
                                                 {
                                                     Console.SetCursorPosition(0, 12);
                                                     Console.Write("ERROR: Introduce un numero");
-                                                    goto asignarX;
+                                                    goto AsignarX;
                                                 }
                                                 int[,] Ma1 = new int[xm, ym];
                                                 int[,] MaTra = new int[ym, xm];
                                                 Ma1 = AsignarValorMatriz(xm, ym);
+                                                Console.CursorVisible = false;
                                                 for (int i = 0; i < ym; i++)
                                                 {
                                                     for (int j = 0; j < xm; j++)
@@ -446,13 +448,30 @@ namespace Menu_v1
                                                 em = (ec * xm) + 3;
                                                 Console.SetCursorPosition((ec * xm) + 1, ym + 3);
                                                 Console.WriteLine(">");
-                                                Console.ReadKey();
-                                                EscribirValorMatriz(MaTra, xm, ym, em, ec);
+                                                EscribirValorMatriz(MaTra, ym, xm, em, ec);
                                                 Console.ReadKey();
                                                 goto MenuMa;
                                             }
-                                        case 4:
-                                            goto MenuMa;
+                                        case 4://Adjunta
+                                            {
+                                                int cfc;
+                                                Console.WriteLine("Solo se puede sacar la adjunta de una matriz cuadrada");
+                                                Console.WriteLine("Introduce la cantidad de filas y columnas: ");
+                                                AsignarX:
+                                                try
+                                                {
+                                                    Console.SetCursorPosition(43, 3);
+                                                    cfc = int.Parse(Console.ReadLine());
+                                                }catch(Exception)
+                                                {
+                                                    Console.SetCursorPosition(0, 12);
+                                                    Console.Write("ERROR: Introduce un numero");
+                                                    goto AsignarX;
+                                                }
+                                                int[,] MaAd = new int[x, x];
+                                                MaAd = AsignarValorMatriz(x, x);
+                                                goto MenuMa;
+                                            }
                                         case 5:
                                             goto MenuMa;
                                         case 6:

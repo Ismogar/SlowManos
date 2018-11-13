@@ -114,19 +114,15 @@ namespace Menu_v1
                                                             }
                                                             m1 = AsignarValorMatriz(y1, z);
                                                             m2 = AsignarValorMatriz(y1, z);
-                                                            cx = 2 * TamañoNumero(m1, y1, z);
+                                                            cx = 3 + TamañoNumero(m1, y1, z);
                                                             EscribirValorMatriz(m1, y1, z, o, cx);
                                                             Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                                             Console.Write("+");
-                                                            Console.Write("   " + cx);
-                                                            Console.ReadKey();
                                                             o = (cx * y1) + 3;
-                                                            cx = 2 * TamañoNumero(m2, y1, z);
+                                                            cx = 3 + TamañoNumero(m2, y1, z);
                                                             EscribirValorMatriz(m2, y1, z, o, cx);
                                                             Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
                                                             Console.Write("=");
-                                                            Console.Write("   " + cx);
-                                                            Console.ReadKey();
                                                             o += (cx * y1) + 3;
                                                             for (int i = 0; i < z; i++)
                                                             {
@@ -135,10 +131,9 @@ namespace Menu_v1
                                                                     m1[j, i] += m2[j, i];
                                                                 }
                                                             }
-                                                            cx = 2 * TamañoNumero(m1, y1, z);
+                                                            cx = 3 + TamañoNumero(m1, y1, z);
                                                             EscribirValorMatriz(m1, y1, z, o, cx);
                                                             Console.CursorVisible = false;
-                                                            Console.Write("   " + cx);
                                                             Console.ReadKey();
                                                             goto MenuMaOp;
                                                         }
@@ -289,7 +284,7 @@ namespace Menu_v1
                                                 }
                                             }
                                             break;
-                                        case 2://Matrices
+                                        case 2://Determinante
                                             {
                                             MenuMaDe:
                                                 Console.CursorVisible = false;
@@ -457,12 +452,13 @@ namespace Menu_v1
                                                 int cfc;
                                                 Console.WriteLine("Solo se puede sacar la adjunta de una matriz cuadrada");
                                                 Console.WriteLine("Introduce la cantidad de filas y columnas: ");
-                                                AsignarX:
+                                            AsignarX:
                                                 try
                                                 {
                                                     Console.SetCursorPosition(43, 3);
                                                     cfc = int.Parse(Console.ReadLine());
-                                                }catch(Exception)
+                                                }
+                                                catch (Exception)
                                                 {
                                                     Console.SetCursorPosition(0, 12);
                                                     Console.Write("ERROR: Introduce un numero");
@@ -615,6 +611,7 @@ namespace Menu_v1
 
         static int[,] AsignarValorMatriz(int x, int y)
         {
+            int TC = 1;
             int[,] m = new int[x, y];
             for (int i = 0; i < y; i++)
             {
@@ -624,6 +621,7 @@ namespace Menu_v1
                     Console.SetCursorPosition((3 * j), (i + 2) * 2);
                     try
                     {
+                        Console.SetCursorPosition((TC * j) + 1, (i + 2) * 2);
                         m[j, i] = int.Parse(Console.ReadLine());
                     }
                     catch (Exception)
@@ -645,6 +643,21 @@ namespace Menu_v1
                         Console.Write("ERROR: Introduce un numero");
                         goto MenuFu;
                     }
+                    Console.SetCursorPosition((3 * j), (i + 2) * 2);
+                    Console.Write("                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            " +
+                                  "                                            ");
+                    TC = 3 + TamañoNumero(m, x, y);
+                    EscribirValorMatriz(m, x, y, 1, TC);
                 }
             }
             for (int i = 0; i < y; i++)

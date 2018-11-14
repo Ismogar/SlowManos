@@ -478,8 +478,6 @@ namespace Menu_v1
                                                 Console.Write(">");
                                                 EE = (TC * nFC) + 3;
                                                 TC = 3 + TamañoNumero(MaAd, nFC, nFC);
-                                                Console.WriteLine(TC);
-                                                Console.ReadKey();
                                                 EscribirValorMatriz(MaAd, nFC, nFC, EE, TC, 4);
                                                 Console.ReadKey();
                                                 goto MenuMa;
@@ -641,6 +639,19 @@ namespace Menu_v1
                         Console.CursorVisible = true;
                         Console.SetCursorPosition((TC * j) + 1, (i * 2) + IM);
                         m[j, i] = int.Parse(Console.ReadLine());
+                        Console.SetCursorPosition(0, 0 + IM);
+                        Console.Write("                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            " +
+                                      "                                            ");
                     }
                     catch (Exception)
                     {

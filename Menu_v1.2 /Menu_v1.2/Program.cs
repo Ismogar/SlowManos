@@ -8,35 +8,33 @@ namespace Menu_v1
     {
         //Para el kevon slow XDXDXD
         //Desde ahi puedes actualiza la version que tienes del codigo
-                public static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            int x = 5, c;
-            string[] Mn1 = new String[x];
+            int c;
             Console.CursorVisible = false;
         MenuPr:
-            x = 5;
+            string[] Mn1 = new String[5];
             Mn1[0] = "Elige la opcion que mas te convenga";
             Mn1[1] = "Algebra Lineal";
             Mn1[2] = "Qumica";
             Mn1[3] = "Fisica";
             Mn1[4] = "Salir";
-            c = Menu(Mn1, x);
+            c = Menu(Mn1, 5);
             switch (c)
             {
                 case 1://Algebra Lineal
                     {
                     MenuAlL:
-                        x = 5;
-                        string[] Mn2 = new string[x];
+                        string[] Mn2 = new string[5];
                         Mn2[0] = "Elige la opcion que mas te convenga";
                         Mn2[1] = "Incognitas";
                         Mn2[2] = "Vectores";
                         Mn2[3] = "Matrices";
                         Mn2[4] = "Volver";
-                        c = Menu(Mn2, x);
+                        c = Menu(Mn2, 5);
                         switch (c)
                         {
                             case 1:
@@ -46,8 +44,7 @@ namespace Menu_v1
                             case 3://Matrices
                                 {
                                 MenuMa:
-                                    x = 7;
-                                    string[] Mm1 = new string[x];
+                                    string[] Mm1 = new string[7];
                                     Mm1[0] = "Elige la opcion que mas te convenga";
                                     Mm1[1] = "Operaciones con matrices";
                                     Mm1[2] = "Determinantes";
@@ -55,15 +52,14 @@ namespace Menu_v1
                                     Mm1[4] = "Adjunta";
                                     Mm1[5] = "Inversa";
                                     Mm1[6] = "Volver";
-                                    c = Menu(Mm1, x);
+                                    c = Menu(Mm1, 7);
                                     Console.Clear();
                                     switch (c)
                                     {
                                         case 1://Operaciones con Matrices
                                             {
                                             MenuMaOp:
-                                                x = 6;
-                                                string[] MO = new string[x];
+                                                string[] MO = new string[6];
                                                 int y1 = 1, y2 = 1, z = 1;
                                                 int o = 1, cx = 1;
                                                 int[,] m1 = new int[y1, z];
@@ -74,7 +70,7 @@ namespace Menu_v1
                                                 MO[3] = "Multiplicacion";
                                                 MO[4] = "Division";
                                                 MO[5] = "Volver";
-                                                c = Menu(MO, x);
+                                                c = Menu(MO, 6);
                                                 Console.Clear();
                                                 switch (c)
                                                 {
@@ -124,7 +120,6 @@ namespace Menu_v1
                                                             Console.ReadKey();
                                                             goto MenuMaOp;
                                                         }
-
                                                     case 2://Resta
                                                         {
                                                             Console.CursorVisible = true;
@@ -476,14 +471,13 @@ namespace Menu_v1
                 case 2://Quimica
                     {
                     MenuQu:
-                        x = 5;
-                        string[] Mn3 = new string[x];
+                        string[] Mn3 = new string[5];
                         Mn3[0] = "Elige la opcion que mas te convenga";
                         Mn3[1] = "Balanceo";
                         Mn3[2] = "Configuracion Electronica";
                         Mn3[3] = "Tabla Periodica";
                         Mn3[4] = "Volver";
-                        c = Menu(Mn3, x);
+                        c = Menu(Mn3, 5);
                         switch (c)
                         {
                             case 1:
@@ -502,13 +496,12 @@ namespace Menu_v1
                 case 3://Fisica
                     {
                     MenuFi:
-                        x = 4;
-                        string[] Mn4 = new string[x];
+                        string[] Mn4 = new string[4];
                         Mn4[0] = "Elige la opcion que mas te convenga";
                         Mn4[1] = "MRU";
                         Mn4[2] = "Conversor";
                         Mn4[3] = "Volver";
-                        c = Menu(Mn4, x);
+                        c = Menu(Mn4, 4);
                         switch (c)
                         {
                             case 1:
@@ -522,11 +515,11 @@ namespace Menu_v1
                     }
                 case 4://Salir
                     {
-                        string[] Mn5 = new string[x];
+                        string[] Mn5 = new string[3];
                         Mn5[0] = "¿Seguro?";
                         Mn5[1] = "Si";
                         Mn5[2] = "No";
-                        c = Menu(Mn5, x);
+                        c = Menu(Mn5, 3);
                         switch (c)
                         {
                             case 2:

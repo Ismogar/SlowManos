@@ -204,6 +204,9 @@ namespace Menu_v1
                                                                 goto asignarY13;
                                                             }
                                                             m1 = AsignarValorMatriz(y1, z1, 4);
+                                                            Console.Clear();
+                                                            Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
+                                                                              "filas que columnas pueden multiplicarse");
                                                             Console.SetCursorPosition(0, 2);
                                                             Console.Write("Cantidad de Filas de la Segunda Matriz: ");
                                                         asignarZ21:
@@ -236,13 +239,13 @@ namespace Menu_v1
                                                             if (y1 == z2)
                                                             {
                                                                 int[,] R = new int[y2, z1];
-                                                                cx = 2 * TamañoNumero(m1, y1, z1);
-                                                                EscribirValorMatriz(m1, y1, z1, o, cx);
+                                                                cx = 2 + TamañoNumero(m1, y1, z1);
+                                                                EscribirValorMatriz(m1, y1, z1, o, 5);
                                                                 Console.SetCursorPosition(o + (y1 * cx), 4 + (z1 - 1));
                                                                 Console.Write("X");
                                                                 o = (cx * y1) + 3;
-                                                                cx = 2 * TamañoNumero(m2, y2, z2);
-                                                                EscribirValorMatriz(m2, y2, z2, o, cx);
+                                                                cx = 2 + TamañoNumero(m2, y2, z2);
+                                                                EscribirValorMatriz(m2, y2, z2, o, 5);
                                                                 Console.SetCursorPosition(o + (y2 * cx), 4 + (z2 - 1));
                                                                 Console.Write("=");
                                                                 o += (cx * y2) + 3;
@@ -256,18 +259,22 @@ namespace Menu_v1
                                                                         }
                                                                     }
                                                                 }
-                                                                cx = 2 * TamañoNumero(R, y2, z1);
-                                                                EscribirValorMatriz(R, y2, z1, o, cx);
+                                                                cx = 2 + TamañoNumero(R, y2, z1);
+                                                                EscribirValorMatriz(R, y2, z1, o, 5);
                                                                 Console.CursorVisible = false;
                                                                 Console.ReadKey();
                                                             }
                                                             else
                                                             {
+                                                                Console.Clear();
+                                                                Console.WriteLine("ERROR: Solo las matrice que contengan la misma cantidad de " +
+                                                                              "filas que columnas pueden multiplicarse");
+                                                                Console.ReadKey();
                                                                 goto MultiplicacionMatrices;
                                                             }
                                                             goto MenuMaOp;
                                                         }
-                                                    case 4:
+                                                    case 4://Division
                                                         goto MenuMaOp;
                                                     case 5:
                                                         goto MenuMa;
@@ -433,7 +440,7 @@ namespace Menu_v1
                                                         MaTra[i, j] = Ma1[j, i];
                                                     }
                                                 }
-                                                ec = 2 * TamañoNumero(Ma1, xm, ym);
+                                                ec = 3 + TamañoNumero(Ma1, xm, ym);
                                                 EscribirValorMatriz(Ma1, xm, ym, 1, 4);
                                                 em = (ec * xm) + 3;
                                                 Console.SetCursorPosition((ec * xm) + 1, ym + 3);
@@ -745,11 +752,11 @@ namespace Menu_v1
                     }
                     if (j + 1 == x)
                     {
-                        Console.SetCursorPosition(((c * j) + z + 1) , (i * 2) + IM);
+                        Console.SetCursorPosition(((c * j) + z + TamañoNumero(m, x, y)) , (i * 2) + IM);
                         Console.Write("|");
                         if (i + 1 != y)
                         {
-                            Console.SetCursorPosition(((c * j) + z + 1), ((i * 2) + IM) + 1);
+                            Console.SetCursorPosition(((c * j) + z + TamañoNumero(m, x, y)), ((i * 2) + IM) + 1);
                             Console.Write("|");
                         }
                     }

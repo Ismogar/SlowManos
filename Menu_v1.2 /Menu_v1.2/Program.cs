@@ -168,31 +168,33 @@ namespace Menu_v1
                                                         }
                                                     case 3://Multiplicacion
                                                         {
-                                                            int mm;
+                                                        MultiplicacionMatrices:
+                                                            Console.Clear();
+                                                            int z1 ,z2;
                                                             Console.CursorVisible = true;
                                                             Console.WriteLine("Nota: Solo las matrice que contengan la misma cantidad de " +
-                                                                              "filas pueden multiplicarse");
+                                                                              "filas que columnas pueden multiplicarse");
                                                             Console.ForegroundColor = ConsoleColor.Green;
                                                             Console.SetCursorPosition(0, 2);
-                                                            Console.Write("Cantidad de filas: ");
-                                                        asignarZ3:
+                                                            Console.Write("Cantidad de Filas de la Primera Matriz: ");
+                                                        asignarZ11:
                                                             try
                                                             {
-                                                                Console.SetCursorPosition(18, 2);
-                                                                z = int.Parse(Console.ReadLine());
+                                                                Console.SetCursorPosition(40, 2);
+                                                                z1 = int.Parse(Console.ReadLine());
                                                             }
                                                             catch (Exception)
                                                             {
                                                                 Console.SetCursorPosition(0, 12);
                                                                 Console.Write("ERROR: Introduce un numero");
-                                                                goto asignarZ3;
+                                                                goto asignarZ11;
                                                             }
                                                             Console.SetCursorPosition(0, 3);
-                                                            Console.Write("Cantidad de Columnas: ");
+                                                            Console.Write("Cantidad de Columnas de la Primera Matriz: ");
                                                         asignarY13:
                                                             try
                                                             {
-                                                                Console.SetCursorPosition(21, 3);
+                                                                Console.SetCursorPosition(43, 3);
                                                                 y1 = int.Parse(Console.ReadLine());
                                                             }
                                                             catch (Exception)
@@ -201,13 +203,27 @@ namespace Menu_v1
                                                                 Console.Write("ERROR: Introduce un numero");
                                                                 goto asignarY13;
                                                             }
-                                                            m1 = AsignarValorMatriz(y1, z, 4);
+                                                            m1 = AsignarValorMatriz(y1, z1, 4);
+                                                            Console.SetCursorPosition(0, 2);
+                                                            Console.Write("Cantidad de Filas de la Segunda Matriz: ");
+                                                        asignarZ21:
+                                                            try
+                                                            {
+                                                                Console.SetCursorPosition(40, 2);
+                                                                z2 = int.Parse(Console.ReadLine());
+                                                            }
+                                                            catch (Exception)
+                                                            {
+                                                                Console.SetCursorPosition(0, 12);
+                                                                Console.Write("ERROR: Introduce un numero");
+                                                                goto asignarZ21;
+                                                            }
                                                             Console.SetCursorPosition(0, 3);
                                                             Console.Write("Cantidad de Columnas de la Segunda Matriz: ");
                                                         asignarY21:
                                                             try
                                                             {
-                                                                Console.SetCursorPosition(42, 3);
+                                                                Console.SetCursorPosition(43, 3);
                                                                 y2 = int.Parse(Console.ReadLine());
                                                             }
                                                             catch (Exception)
@@ -216,33 +232,51 @@ namespace Menu_v1
                                                                 Console.Write("ERROR: Introduce un numero");
                                                                 goto asignarY21;
                                                             }
-                                                            m2 = AsignarValorMatriz(y2, z, 4);
-                                                            cx = 2 * TamañoNumero(m1, y1, z);
-                                                            EscribirValorMatriz(m1, y1, z, o, 4);
-                                                            Console.SetCursorPosition(o + (y1 * cx), 4 + (z - 1));
-                                                            Console.Write("X");
-                                                            o = (cx * y1) + 3;
-                                                            cx = 2 * TamañoNumero(m2, y2, z);
-                                                            EscribirValorMatriz(m2, y2, z, o, 4);
-                                                            Console.SetCursorPosition(o + (y2 * cx), 4 + (z - 1));
-                                                            Console.Write("=");
-                                                            o += (cx * y2) + 3;
-                                                            for (int i = 0; i < z; i++)
+                                                            m2 = AsignarValorMatriz(y2, z2, 4);
+                                                            if (y1 == z2)
                                                             {
-                                                                mm = 0;
-                                                                for (int j = 0; j < y1; j++)
+                                                                int[,] R = new int[y2, z1];
+                                                                cx = 2 * TamañoNumero(m1, y1, z1);
+                                                                EscribirValorMatriz(m1, y1, z1, o, cx);
+                                                                Console.SetCursorPosition(o + (y1 * cx), 4 + (z1 - 1));
+                                                                Console.Write("X");
+                                                                o = (cx * y1) + 3;
+                                                                cx = 2 * TamañoNumero(m2, y2, z2);
+                                                                EscribirValorMatriz(m2, y2, z2, o, cx);
+                                                                Console.SetCursorPosition(o + (y2 * cx), 4 + (z2 - 1));
+                                                                Console.Write("=");
+                                                                o += (cx * y2) + 3;
+                                                                for (int i = 0; i < z1; i++)
                                                                 {
-                                                                    mm += m1[j, i];
+                                                                    for (int j = 0; j < y2; j++)
+                                                                    {
+                                                                        for (int k = 0; k < y1; k++)
+                                                                        {
+                                                                            R[j, i] += m1[k, i] * m2[j, k];
+                                                                        }
+                                                                    }
                                                                 }
-                                                                for (int j = 0; j < y2; j++)
-                                                                {
-                                                                    m2[j, i] *= mm;
-                                                                }
+                                                                //for (int i = 0; i < z; i++)
+                                                                //{
+                                                                //    mm = 0;
+                                                                //    for (int j = 0; j < y1; j++)
+                                                                //    {
+                                                                //        mm += m1[j, i];
+                                                                //    }
+                                                                //    for (int j = 0; j < y2; j++)
+                                                                //    {
+                                                                //        m2[j, i] *= mm;
+                                                                //    }
+                                                                //}
+                                                                cx = 2 * TamañoNumero(R, y2, z1);
+                                                                EscribirValorMatriz(R, y2, z1, o, cx);
+                                                                Console.CursorVisible = false;
+                                                                Console.ReadKey();
                                                             }
-                                                            cx = 2 * TamañoNumero(m2, y2, z);
-                                                            EscribirValorMatriz(m2, y2, z, o, 4);
-                                                            Console.CursorVisible = false;
-                                                            Console.ReadKey();
+                                                            else
+                                                            {
+                                                                goto MultiplicacionMatrices;
+                                                            }
                                                             goto MenuMaOp;
                                                         }
                                                     case 4:
@@ -330,7 +364,7 @@ namespace Menu_v1
                                                             Console.ForegroundColor = ConsoleColor.Green;
                                                             m2 = AsignarValorMatriz(3, 3, 4);
                                                             TC = 3 + TamañoNumero(m2, 3, 3);
-                                                            EscribirValorMatriz(m2, 3, 3, 1, 4);
+                                                            EscribirValorMatriz(m2, 3, 3,1, 4);
                                                             Console.CursorVisible = false;
 
                                                             Console.SetCursorPosition(3, 10);
@@ -606,22 +640,25 @@ namespace Menu_v1
                 MenuFu:
                     try
                     {
+                        TC = 2*TamañoNumero(m, x, y);
                         Console.CursorVisible = true;
                         Console.SetCursorPosition((TC * j) + 1, (i * 2) + IM);
                         m[j, i] = int.Parse(Console.ReadLine());
                         Console.SetCursorPosition(0, 0 + IM);
-                        Console.Write("                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            " +
-                                      "                                            ");
+                        {
+                            Console.Write("                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            " +
+                                          "                                            ");
+                        }
                     }
                     catch (Exception)
                     {
@@ -702,7 +739,7 @@ namespace Menu_v1
 
         static void EscribirValorMatriz(int[,] m, int x, int y, int z, int IM)
         {
-            int c = TamañoNumero(m, x, y);
+            int c = 2 * TamañoNumero(m, x, y);
             Console.ForegroundColor = ConsoleColor.Green;
             for (int i = 0; i < y; i++)
             {
@@ -720,11 +757,11 @@ namespace Menu_v1
                     }
                     if (j + 1 == x)
                     {
-                        Console.SetCursorPosition(((c * j) + z) + TamañoNumero(m, x, y), (i * 2) + IM);
+                        Console.SetCursorPosition(((c * j) + z + 1) , (i * 2) + IM);
                         Console.Write("|");
                         if (i + 1 != y)
                         {
-                            Console.SetCursorPosition(((c * j) + z) + TamañoNumero(m, x, y), ((i * 2) + IM) + 1);
+                            Console.SetCursorPosition(((c * j) + z + 1), ((i * 2) + IM) + 1);
                             Console.Write("|");
                         }
                     }

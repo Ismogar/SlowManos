@@ -7,6 +7,7 @@ namespace Menu_v1
     class MainClass
     {
         //Para el kevon slow XDXDXD
+        //Desde ahi puedes actualiza la version que tienes del codigo
                 public static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;

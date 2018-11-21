@@ -6,8 +6,6 @@ namespace Menu_v1
 {
     class MainClass
     {
-        //Para el kevon slow XDXDXD
-        //Desde ahi puedes actualiza la version que tienes del codigo
         public static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -62,8 +60,8 @@ namespace Menu_v1
                                                 string[] MO = new string[6];
                                                 int y1 = 1, y2 = 1, z = 1;
                                                 int o = 1, cx = 1;
-                                                int[,] m1 = new int[y1, z];
-                                                int[,] m2 = new int[y1, z];
+                                                double[,] m1 = new double[y1, z];
+                                                double[,] m2 = new double[y1, z];
                                                 MO[0] = "Elije la opcion que mas te convenga";
                                                 MO[1] = "Suma";
                                                 MO[2] = "Resta";
@@ -238,7 +236,7 @@ namespace Menu_v1
                                                             m2 = AsignarValorMatriz(y2, z2, 4);
                                                             if (y1 == z2)
                                                             {
-                                                                int[,] R = new int[y2, z1];
+                                                                double[,] R = new double[y2, z1];
                                                                 cx = 2 + TamañoNumero(m1, y1, z1);
                                                                 EscribirValorMatriz(m1, y1, z1, o, 5);
                                                                 Console.SetCursorPosition(o + (y1 * cx), 4 + (z1 - 1));
@@ -288,8 +286,8 @@ namespace Menu_v1
                                             MenuMaDe:
                                                 Console.CursorVisible = false;
                                                 string[] DE = new string[5];
-                                                int[,] m1 = new int[2, 2];
-                                                int[,] m2 = new int[2, 2];
+                                                //int[,] m1 = new int[2, 2];
+                                                //int[,] m2 = new int[2, 2];
                                                 DE[0] = "Elije la opcion que mas te convenga";
                                                 DE[1] = "2x2";
                                                 DE[2] = "3x3";
@@ -301,10 +299,11 @@ namespace Menu_v1
                                                 {
                                                     case 1://Matriz 2x2
                                                         {
+                                                            double[,] m2 = new double[2, 2];
+                                                            double[,] m = new double[2, 2];
                                                             int TC = 1;
                                                             Console.ForegroundColor = ConsoleColor.DarkGray;
                                                             Console.Clear();
-                                                            int[,] m = new int[2, 2];
                                                             Console.WriteLine("Matriz 2x2 ");
                                                             Console.WriteLine("Para calcular el determinante de una matriz 2x2, tienes que " +
                                                                               "ralizar  la multiplicaciÛn y la resta. En este sentido tenemos " +
@@ -346,6 +345,7 @@ namespace Menu_v1
                                                         }
                                                     case 2://Matriz  3x3
                                                         {
+                                                            double[,] m2 = new double[3, 3];
                                                             int TC = 1;
                                                             Console.ForegroundColor = ConsoleColor.DarkGray;
                                                             Console.Clear();
@@ -386,12 +386,79 @@ namespace Menu_v1
                                                         }
                                                     case 3://Matriz NxN
                                                         {
+                                                            int nFC, o;
+                                                            double R = 1;
+                                                            Console.ForegroundColor = ConsoleColor.Green;
                                                             Console.WriteLine("Matriz NxN");
-                                                            Console.WriteLine("");
-                                                            Console.WriteLine("Numero de filas y de columnas :");
+                                                            Console.WriteLine("Nota: Toma en cuenta que solo se puede hacer determinante de " +
+                                                                              "matrices cuadradas.");
+                                                            Console.Write("Numero de filas y de columnas :");
+                                                            Console.CursorVisible = true;
+                                                            AsignarnFC:
+                                                            try
+                                                            {
+                                                                Console.SetCursorPosition(31, 2);
+                                                                nFC = int.Parse(Console.ReadLine());
+                                                            }
+                                                            catch(Exception)
+                                                            {
+                                                                Console.SetCursorPosition(0, 12);
+                                                                Console.Write("ERROR: Introduce un numero");
+                                                                goto AsignarnFC;
+                                                            }
+                                                            double[,] M = new double[nFC, nFC];
+                                                            double[,] x = new double[nFC, nFC];
+                                                            for (int i = 0; i < nFC; i++)
+                                                            {
+                                                                for (int j = 0; j < nFC; j++)
+                                                                {
+                                                                    x[j, i] = 0;
+                                                                }
+                                                            }
+                                                            M = AsignarValorMatriz(nFC, nFC, 4);
+                                                            EscribirValorMatriz(M, nFC, nFC, 1, 4);
+                                                            for (int d = 0; d < nFC - 1; d++)
+                                                            {
+                                                                for (int i = d; i < nFC; i++)
+                                                                {
+                                                                    for (int j = d + 1; j < nFC; j++)
+                                                                    {
+                                                                        x[i, j] = -1 * M[d, j] * (M[i, d] / M[d, d]);
+                                                                        //Console.Clear();
+                                                                        //EscribirValorMatriz(x, nFC, nFC, 1, 4);
+                                                                        //Console.ReadKey();
+                                                                    }
+                                                                }
+                                                                for (int i = d; i < nFC; i++)
+                                                                {
+                                                                    for (int j = d + 1; j < nFC; j++)
+                                                                    {
+                                                                        M[i, j] += x[i, j];
+                                                                        //Console.Clear();
+                                                                        //EscribirValorMatriz(M, nFC, nFC, 1, 4);
+                                                                        //Console.ReadKey();
+                                                                    }
+                                                                }
+                                                            }
+                                                            for (int d = 0; d < nFC; d++)
+                                                            {
+                                                                R *= x[d, d];
+                                                            }
+                                                            for (int i = 0; i < nFC; i++)
+                                                            {
+                                                                R *= M[i, 0];
+                                                            }
+                                                            Console.SetCursorPosition(nFC * (TamañoNumero(M, nFC, nFC) + 2), 4 + nFC - 1);
+                                                            Console.Write(">");
+                                                            o = nFC * (TamañoNumero(M, nFC, nFC) + 2) + 4;
+                                                            EscribirValorMatriz(x, nFC, nFC, o, 4);
+                                                            Console.WriteLine();
+                                                            Console.WriteLine("La determinante es :" + R);
+                                                            Console.ReadKey();
                                                             goto MenuMaDe;
                                                         }
                                                     case 4:
+
                                                         goto MenuMa;
                                                     default:
                                                         break;
@@ -429,8 +496,8 @@ namespace Menu_v1
                                                     Console.Write("ERROR: Introduce un numero");
                                                     goto AsignarX;
                                                 }
-                                                int[,] Ma1 = new int[xm, ym];
-                                                int[,] MaTra = new int[ym, xm];
+                                                double[,] Ma1 = new double[xm, ym];
+                                                double[,] MaTra = new double[ym, xm];
                                                 Ma1 = AsignarValorMatriz(xm, ym, 4);
                                                 Console.CursorVisible = false;
                                                 for (int i = 0; i < ym; i++)
@@ -468,7 +535,7 @@ namespace Menu_v1
                                                     Console.Write("ERROR: Introduce un numero");
                                                     goto AsignarnFC;
                                                 }
-                                                int[,] MaAd = new int[nFC, nFC];
+                                                double[,] MaAd = new double[nFC, nFC];
                                                 MaAd = AsignarValorMatriz(nFC, nFC, 4);
                                                 TC = 3 + TamañoNumero(MaAd, nFC, nFC);
                                                 EscribirValorMatriz(MaAd, nFC, nFC, EE, 4);
@@ -623,11 +690,11 @@ namespace Menu_v1
             return c;
         }
 
-        static int[,] AsignarValorMatriz(int x, int y, int IM)
+        static double[,] AsignarValorMatriz(int x, int y, int IM)
         {
             Console.ForegroundColor = ConsoleColor.Green;
             int TC = 1;
-            int[,] m = new int[x, y];
+            double[,] m = new double[x, y];
             for (int i = 0; i < y; i++)
             {
                 for (int j = 0; j < x; j++)
@@ -638,7 +705,7 @@ namespace Menu_v1
                         TC = 2 + TamañoNumero(m, x, y);
                         Console.CursorVisible = true;
                         Console.SetCursorPosition((TC * j) + 1, (i * 2) + IM);
-                        m[j, i] = int.Parse(Console.ReadLine());
+                        m[j, i] = double.Parse(Console.ReadLine());
                         Console.SetCursorPosition(0, 0 + IM);
                         {
                             Console.Write("                                            " +
@@ -732,7 +799,7 @@ namespace Menu_v1
             return m;
         }
 
-        static void EscribirValorMatriz(int[,] m, int x, int y, int z, int IM)
+        static void EscribirValorMatriz(double[,] m, int x, int y, int z, int IM)
         {
             int c = 2 + TamañoNumero(m, x, y);
             Console.ForegroundColor = ConsoleColor.Green;
@@ -761,12 +828,19 @@ namespace Menu_v1
                         }
                     }
                     Console.SetCursorPosition((c * j) + z, (i * 2) + IM);
-                    Console.Write(m[j, i]);
+                    if (i + 1 == y)
+                    {
+                        Console.WriteLine(m[j, i]);
+                    }
+                    else
+                    {
+                        Console.Write(m[j, i]);
+                    }
                 }
             }
         }
 
-        static int TamañoNumero(int[,] m, int x, int y)
+        static int TamañoNumero(double[,] m, int x, int y)
         {
             int c = 1;
             string mS1, mS2;
@@ -791,10 +865,10 @@ namespace Menu_v1
             return c;
         }
 
-        static int[,] CofactorMatriz(int[,] m, int x1)
+        static double[,] CofactorMatriz(double[,] m, int x1)
         {
-            int[,] CoM = new int[x1, x1];
-            int[,] R = new int[x1, x1];
+            double[,] CoM = new double[x1, x1];
+            double[,] R = new double[x1, x1];
             switch (x1)
             {
                 case 2:
@@ -804,7 +878,7 @@ namespace Menu_v1
                     R[0, 1] = m[0, 1] * -1;
                     break;
                 default:
-                    int[,] coM = new int[x1 - 1, x1 - 1];
+                    double[,] coM = new double[x1 - 1, x1 - 1];
                     int c2 = 0, f2 = 0;
                     for (int fX = 0; fX < x1; fX++)
                     {
@@ -854,9 +928,9 @@ namespace Menu_v1
             return R;
         }
 
-        static int Determinante(int[,] m, int x)
+        static double Determinante(double[,] m, int x)
         {
-            int De = 1;
+            double De = 1;
             switch (x)
             {
                 case 2:

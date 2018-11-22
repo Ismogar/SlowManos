@@ -433,7 +433,7 @@ namespace Menu_v1
                                                                 {
                                                                     for (int j = d + 1; j < nFC; j++)
                                                                     {
-                                                                        M[i, j] += x[i, j];
+                                                                        M[i, j] += Math.Round(x[i, j]);
                                                                         //Console.Clear();
                                                                         //EscribirValorMatriz(M, nFC, nFC, 1, 4);
                                                                         //Console.ReadKey();

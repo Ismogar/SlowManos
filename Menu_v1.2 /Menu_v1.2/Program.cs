@@ -405,55 +405,62 @@ namespace Menu_v1
                                                                 Console.SetCursorPosition(0, 12);
                                                                 Console.Write("ERROR: Introduce un numero");
                                                                 goto AsignarnFC;
-                                                            }
-                                                            double[,] M = new double[nFC, nFC];
-                                                            double[,] x = new double[nFC, nFC];
-                                                            for (int i = 0; i < nFC; i++)
-                                                            {
-                                                                for (int j = 0; j < nFC; j++)
-                                                                {
-                                                                    x[j, i] = 0;
-                                                                }
-                                                            }
-                                                            M = AsignarValorMatriz(nFC, nFC, 4);
-                                                            EscribirValorMatriz(M, nFC, nFC, 1, 4);
-                                                            for (int d = 0; d < nFC - 1; d++)
-                                                            {
-                                                                for (int i = d; i < nFC; i++)
-                                                                {
-                                                                    for (int j = d + 1; j < nFC; j++)
-                                                                    {
-                                                                        x[i, j] = -1 * M[d, j] * (M[i, d] / M[d, d]);
-                                                                        //Console.Clear();
-                                                                        //EscribirValorMatriz(x, nFC, nFC, 1, 4);
-                                                                        //Console.ReadKey();
-                                                                    }
-                                                                }
-                                                                for (int i = d; i < nFC; i++)
-                                                                {
-                                                                    for (int j = d + 1; j < nFC; j++)
-                                                                    {
-                                                                        M[i, j] += Math.Round(x[i, j]);
-                                                                        //Console.Clear();
-                                                                        //EscribirValorMatriz(M, nFC, nFC, 1, 4);
-                                                                        //Console.ReadKey();
-                                                                    }
-                                                                }
-                                                            }
-                                                            for (int d = 0; d < nFC; d++)
-                                                            {
-                                                                R *= x[d, d];
-                                                            }
-                                                            for (int i = 0; i < nFC; i++)
-                                                            {
-                                                                R *= M[i, 0];
-                                                            }
-                                                            Console.SetCursorPosition(nFC * (TamañoNumero(M, nFC, nFC) + 2), 4 + nFC - 1);
-                                                            Console.Write(">");
-                                                            o = nFC * (TamañoNumero(M, nFC, nFC) + 2) + 4;
-                                                            EscribirValorMatriz(x, nFC, nFC, o, 4);
-                                                            Console.WriteLine();
-                                                            Console.WriteLine("La determinante es :" + R);
+                                                            }//tis wea no funca bien, si quiere intenten ustedes...
+                                                            //double[,] M = new double[nFC, nFC];
+                                                            //double[,] x = new double[nFC, nFC];
+                                                            //for (int i = 0; i < nFC; i++)
+                                                            //{
+                                                            //    for (int j = 0; j < nFC; j++)
+                                                            //    {
+                                                            //        if (i == 0)
+                                                            //        {
+                                                            //            x[i, j] = M[i, j];
+                                                            //        }
+                                                            //        else
+                                                            //        {
+                                                            //            x[j, i] = 0;
+                                                            //        }
+                                                            //    }
+                                                            //}
+                                                            //M = AsignarValorMatriz(nFC, nFC, 4);
+                                                            //EscribirValorMatriz(M, nFC, nFC, 1, 4);
+                                                            //for (int d = 0; d < nFC - 1; d++)
+                                                            //{
+                                                            //    for (int i = d; i < nFC; i++)
+                                                            //    {
+                                                            //        for (int j = d + 1; j < nFC; j++)
+                                                            //        {
+                                                            //            x[i, j] = Math.Round(-1 * M[d, j] * (M[i, d]));/// M[d, d]));
+                                                            //            Console.Clear();
+                                                            //            EscribirValorMatriz(x, nFC, nFC, 1, 4);
+                                                            //            Console.ReadKey();
+                                                            //        }
+                                                            //    }
+                                                            //    for (int i = d; i < nFC; i++)
+                                                            //    {
+                                                            //        for (int j = d + 1; j < nFC; j++)
+                                                            //        {
+                                                            //            M[i, j] += Math.Round(x[i, j]);
+                                                            //            Console.Clear();
+                                                            //            EscribirValorMatriz(M, nFC, nFC, 1, 4);
+                                                            //            Console.ReadKey();
+                                                            //        }
+                                                            //    }
+                                                            //}
+                                                            //for (int d = 0; d < nFC; d++)
+                                                            //{
+                                                            //    R *= M[d, d];
+                                                            //}
+                                                            //for (int i = 0; i < nFC; i++)
+                                                            //{
+                                                            //    R *= M[i, 0];
+                                                            //}
+                                                            //Console.SetCursorPosition(nFC * (TamañoNumero(M, nFC, nFC) + 2), 4 + nFC - 1);
+                                                            //Console.Write(">");
+                                                            //o = nFC * (TamañoNumero(M, nFC, nFC) + 2) + 4;
+                                                            //EscribirValorMatriz(M, nFC, nFC, o, 4);
+                                                            //Console.WriteLine();
+                                                            //Console.WriteLine("La determinante es :" + R);
                                                             Console.ReadKey();
                                                             goto MenuMaDe;
                                                         }

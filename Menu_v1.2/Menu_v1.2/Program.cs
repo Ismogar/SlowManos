@@ -4,46 +4,141 @@ using System.Threading;
 
 namespace Menu_v1
 {
+    class EText
+    {
+        int x, X, y, index, k, longitudvec;
+        string s;
+        public EText(string s, int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+            X = 45;
+            k = 0;
+            this.s = s;
+            longitudvec = s.Length;
+            index = longitudvec - 1;
+
+        }
+
+        public void ve()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;  
+            Console.SetCursorPosition(X, y);
+            for (int i = k; i < longitudvec; i++)
+            {
+
+                if (i == index)
+                {
+                    System.Threading.Thread.Sleep(300);
+
+                    char[] carat = new char[10];
+
+
+
+
+                }
+                Console.Write(s[i]);
+                if (index == k)
+                {
+                    k++;
+                    X++;
+                    index = longitudvec;
+                }
+
+                index--;
+
+            }
+
+
+        }
+    }
     class MainClass
     {
         //Avr si si funciona tis weassssssssssswsw
-        //slow puedes ver esto?sssssss
+        //slow puedes ver esto?sssssss holixd
+        int x, X, y, index, k, longitudvec;
+        string s;
+
+
+        static void dibujarescrito(string[] str)
+        {
+            Console.CursorVisible = true;
+
+            int n = str.Length;
+
+            EText[] ET = new EText[n];
+            int x, y;
+            x = 15;
+            y = 8;
+            for (int i = 0; i < n; i++)
+            {
+                ET[i] = new EText(str[i], x, y + i);
+            }
+            int ctr = -n;
+            foreach (EText et in ET)
+            {
+                et.ve();
+            }
+            Console.ReadKey();
+            Console.Clear();
+            Console.ReadKey();
+
+        }
+
         public static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             int x = 5, c;
-            strinºg[] Mn1 = new String[x];
-            Console.CursorVisible = false;
+            string[] Mn1 = new String[x];
+
+               string[] str = new string[]  { " 00     00  00   000   00   00  000000000 0    0 00   00",
+                                              "0  00   00  00  00 00  00   00  000000000 0    0 000 000",
+                                              "0  00   00  00 00  000 0000 00     000    0    0 00 0 00  ",
+                                              "0  00   00  00 0000000 00 0 00     000    0    0 00   00 ",
+                                              "0  0    00  00 00   00 00 0000     000    0    0 00   00 ",
+                                              " 00 0   000000 00   00 00  000     000     0000  00   00   "};
+            dibujarescrito(str);
+
+            Console.CursorVisible = false;//awanten :'v
         MenuPr:
-            x = 5;
             Mn1[0] = "Elige la opcion que mas te convenga";
             Mn1[1] = "Algebra Lineal";
             Mn1[2] = "Qumica";
             Mn1[3] = "Fisica";
             Mn1[4] = "Salir";
-            c = Menu(Mn1, x);
+            c = Menu(Mn1, 5);
             switch (c)
             {
                 case 1://Algebra Lineal
                     {
+                        Console.Clear();
+                str = new string[] {     " 000   00      0 0000 000000 000000  000000     000",
+                                         "00 00  00     0       0      00   00 00   00   00 00",
+                                         "00000  00     0   000 000000 00   0  00  00    00000",
+                                         "00 00  00     0     0 0      00    0 00000     00 00",
+                                         "00 00  00     0     0 0      00   00 00  00    00 00",
+                                         "00 00  000000  00000  000000 000000  00    00  00 00"};
+
+                        dibujarescrito(str);
+                        Console.Clear();
+
+
                     MenuAlL:
-                        x = 5;
                         string[] Mn2 = new string[x];
                         Mn2[0] = "Elige la opcion que mas te convenga";
                         Mn2[1] = "Incognitas";
                         Mn2[2] = "Matrices";
                         Mn2[3] = "Volver";
                         // Mn2[4] = "Volver";
-                        c = Menu(Mn2, x);
+                        c = Menu(Mn2, 5);
                         switch (c)
                         {
                             case 1:
+
                                 goto MenuAlL;
-                            case 2:
-                                goto MenuAlL;
-                            case 3://Matrices
+                            case 2://Matrices
                                 {
                                 MenuMa:
                                     x = 7;
@@ -466,7 +561,7 @@ namespace Menu_v1
                                     }
                                 }
                                 break;
-                            case 4:
+                            case 3:
                                 goto MenuPr;
                             default:
                                 break;
@@ -475,6 +570,17 @@ namespace Menu_v1
                     break;
                 case 2://Quimica
                     {
+                        Console.Clear();
+
+                        str = new string[] {     " 000   0 0  00  00   00 00   0000   000   ",
+                                         "0   0  0 0  00  0000000 00  0      00 00  ",
+                                         "0   0  0 0  00  00 0 00 00  0      00000  ",
+                                         "0   0  0 0  00  00   00 00  0      00 00  ",
+                                         "0   0  0 0  00  00   00 00  0      00 00  ",
+                                         " 000 0 000  00  00   00 00   0000  00 00  "};
+                        dibujarescrito(str);
+
+                        Console.Clear();
                     MenuQu:
                         x = 5;
                         string[] Mn3 = new string[x];
@@ -499,8 +605,18 @@ namespace Menu_v1
                         }
                         break;
                     }
-                case 3://Fisica
+                case 3:    //Fisica
                     {
+                        Console.Clear();
+
+                        str = new string[]  {"00000  00   000  00   0000   000   ",
+                                          "00     00  0   0 00  0      00 00  ",
+                                          "00000  00   0    00  0      00000  ",
+                                          "00     00     0  00  0      00 00  ",
+                                          "00     00  0   0 00  0      00 00  ",
+                                          "00     00   000  00   0000  00 00  "};
+                        dibujarescrito(str);
+                        Console.Clear();
                     MenuFi:
                         x = 4;
                         string[] Mn4 = new string[x];
@@ -511,15 +627,567 @@ namespace Menu_v1
                         c = Menu(Mn4, x);
                         switch (c)
                         {
-                            case 1:
+                            case 1://MRU
+                                string d, v, t;
+                                Console.ForegroundColor = ConsoleColor.DarkGray;
+                                Console.WriteLine("Ingresa un '?' en la incoginta");
+                                Console.SetCursorPosition(50, 3);
+                                Console.WriteLine("d = Distancia(m)" + "   v = Velocidad(m/s)" + "  t = Tiempo(seg)");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                Console.SetCursorPosition(3, 3);
+                                Console.WriteLine("d = ");
+                                Console.SetCursorPosition(7, 3);
+                                d = Console.ReadLine();
+                                Console.SetCursorPosition(3, 4);
+                                Console.WriteLine("v = ");
+                                Console.SetCursorPosition(7, 4);
+                                v = Console.ReadLine();
+                                Console.SetCursorPosition(3, 5);
+                                Console.WriteLine("t = ");
+                                Console.SetCursorPosition(7, 5);
+                                t = Console.ReadLine();
+                                if (d == "?")
+                                {
+                                    Console.SetCursorPosition(13, 4);
+                                    d = ((double.Parse(v)) * (double.Parse(t))).ToString();
+                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                    Console.Write("d = v x t");
+                                    Console.Write(" = ");
+                                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                    Console.Write("d = " + v + " x " + t);
+                                    Console.SetCursorPosition(10, 5);
+                                    Console.Write("d = " + d + "m");
+                                    Console.ReadKey();
+                                }
+                                if (v == "?")
+                                {
+                                    Console.SetCursorPosition(10, 4);
+                                    v = ((double.Parse(d)) / (double.Parse(t))).ToString();
+                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                    Console.Write("v = d/t");
+                                    Console.Write(" = ");
+                                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                    Console.Write("v = " + d + "/" + t);
+                                    Console.SetCursorPosition(10, 5);
+                                    Console.Write("v = " + v + "m/s");
+                                    Console.ReadKey();
+                                }
+                                if (t == "?")
+                                {
+                                    Console.SetCursorPosition(10, 4);
+                                    t = ((double.Parse(d)) / (double.Parse(v))).ToString();
+                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                    Console.Write("t = d/v");
+                                    Console.Write(" = ");
+                                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                    Console.Write("t = " + d + "/" + v);
+                                    Console.SetCursorPosition(10, 5);
+                                    Console.Write("t = " + t + "seg");
+                                    Console.ReadKey();
+                                }
+                                else
+                                {
+                                    Console.SetCursorPosition(10, 4);
+                                    Console.ForegroundColor = ConsoleColor.Cyan;
+                                    Console.WriteLine("Ya pusiste todasxd");
+                                }
+
                                 goto MenuFi;
-                            case 2:
-                                goto MenuFi;
-                            case 3:
-                                goto MenuPr;
+                            case 2://Convertidor
+                                Console.BackgroundColor = ConsoleColor.Black;
+                                Console.Clear();
+                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                x = 7;
+                                c = 1;
+                                Console.CursorVisible = false;
+                                string[] CU = new string[x];
+                            unidm:
+                                CU[0] = "Elije una opcion";
+                                CU[1] = "Longitud";
+                                CU[2] = "Volumen";
+                                CU[3] = "Masa";
+                                CU[4] = "Temperatura";
+                                CU[5] = "Volver";
+                                c = Menu(CU, x);
+                                switch (c)
+                                {
+                                    case 1:
+                                        Console.CursorVisible = false;
+
+                                        string[] Lo = new string[10];
+                                    flo:
+                                        Lo[0] = "Elije una unidad";
+                                        Lo[1] = "Kilometro";
+                                        Lo[2] = "Metro";
+                                        Lo[3] = "Centimetro";
+                                        Lo[4] = "Milimerro";
+                                        Lo[5] = "Milla";
+                                        Lo[6] = "Yarda";
+                                        Lo[7] = "Pie";
+                                        Lo[8] = "Pulgada";
+                                        Lo[9] = "Volver";
+                                        c = Menu(Lo, x);
+                                        Console.Clear();
+                                        switch (c)
+                                        {
+                                            case 1:
+                                                double lk;
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                lk = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(lk + " Kilometros son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Metro = " + lk * 1000);
+                                                Console.WriteLine("Centimetro = " + lk * 100000);
+                                                Console.WriteLine("Milimetro = " + lk * 1000000);
+                                                Console.WriteLine("Milla = " + lk * 0.621371);
+                                                Console.WriteLine("Yarda = " + lk * 1093.61);
+                                                Console.WriteLine("Pie = " + lk * 3280.84);
+                                                Console.WriteLine("Pulgada = " + lk * 3280.84);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 2:
+                                                double m;
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Metros son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilometro = " + m * 0.001);
+                                                Console.WriteLine("Centimetro = " + m * 100);
+                                                Console.WriteLine("Milimetro = " + m * 1000);
+                                                Console.WriteLine("Milla = " + m * 0.000621371);
+                                                Console.WriteLine("Yarda = " + m * 1.09361);
+                                                Console.WriteLine("Pie = " + m * 3.28084);
+                                                Console.WriteLine("Pulgada = " + m * 39.3701);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 3:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Centimetros son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilometro = " + m * 0.00001);
+                                                Console.WriteLine("Metro = " + m * 0.01);
+                                                Console.WriteLine("Milimetro = " + m * 10);
+                                                Console.WriteLine("Milla = " + m * 0.00000621371);
+                                                Console.WriteLine("Yarda = " + m * 0.0109361);
+                                                Console.WriteLine("Pie = " + m * 0.0328084);
+                                                Console.WriteLine("Pulgada = " + m * 0.393701);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 4:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Milimetros son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilometro = " + m * 0.000001);
+                                                Console.WriteLine("Metro = " + m * 0.001);
+                                                Console.WriteLine("Centimetro = " + m * 0.1);
+                                                Console.WriteLine("Milla = " + m * 0.000000621371);
+                                                Console.WriteLine("Yarda = " + m * 0.00109361);
+                                                Console.WriteLine("Pie = " + m * 0.00328084);
+                                                Console.WriteLine("Pulgada = " + m * 0.0393701);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 5:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Millas son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilometro = " + m * 1.60934);
+                                                Console.WriteLine("Metro = " + m * 1609.34);
+                                                Console.WriteLine("Centimetro = " + m * 160934);
+                                                Console.WriteLine("Milimetro = " + m * 1609344);
+                                                Console.WriteLine("Yarda = " + m * 1760);
+                                                Console.WriteLine("Pie = " + m * 5280);
+                                                Console.WriteLine("Pulgada = " + m * 63360);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 6:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Yardas son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilometro = " + m * 0.0009144);
+                                                Console.WriteLine("Metro = " + m * 0.9144);
+                                                Console.WriteLine("Centimetro = " + m * 91.44);
+                                                Console.WriteLine("Milimetro = " + m * 914.4);
+                                                Console.WriteLine("Milla = " + m * 0.000568182);
+                                                Console.WriteLine("Pie = " + m * 3);
+                                                Console.WriteLine("Pulgada = " + m * 36);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 7:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Pies son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilometro = " + m * 0.0003048);
+                                                Console.WriteLine("Metro = " + m * 0.3048);
+                                                Console.WriteLine("Centimetro = " + m * 30.48);
+                                                Console.WriteLine("Milimetro = " + m * 304.8);
+                                                Console.WriteLine("Milla = " + m * 0.000189394);
+                                                Console.WriteLine("Yarda = " + m * 0.333333);
+                                                Console.WriteLine("Pulgada = " + m * 12);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 8:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Pulgadas son: ");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilometro = " + m * 0.0000254);
+                                                Console.WriteLine("Metro = " + m * 0.0254);
+                                                Console.WriteLine("Centimetro = " + m * 2.54);
+                                                Console.WriteLine("Milimetro = " + m * 25.4);
+                                                Console.WriteLine("Milla = " + m * 0.00001578);
+                                                Console.WriteLine("Yarda = " + m * 0.0277778);
+                                                Console.WriteLine("Pie = " + m * 0.0833333);
+                                                Console.ReadKey();
+                                                goto flo;
+                                            case 9:
+                                                goto unidm;
+                                        }
+                                        break;
+                                    case 2:
+                                        Console.CursorVisible = false;
+                                        x = 11;
+                                        string[] vo = new string[x];
+                                    fvo:
+                                        vo[0] = "Elije una opcion";
+                                        vo[1] = "Litro";
+                                        vo[2] = "Mililitro";
+                                        vo[3] = "Metro cubico";
+                                        vo[4] = "Onza";
+                                        vo[5] = "Pie cubico";
+                                        vo[6] = "Pulgada cubica";
+                                        vo[7] = "Galón Estadounidense";
+                                        vo[8] = "Galón imperia";
+                                        vo[9] = "Volver";
+                                        c = Menu(vo, x);
+                                        Console.Clear();
+                                        switch (c)
+                                        {
+                                            case 1:
+                                                Double m;
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Litros son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Mililitros = " + m * 1000);
+                                                Console.WriteLine("Metro cubicos = " + m * 0.001);
+                                                Console.WriteLine("Onzas = " + m * 33.814);
+                                                Console.WriteLine("Pie cubico = " + m * 0.0353147);
+                                                Console.WriteLine("Pulgada cubica = " + m * 61.0237);
+                                                Console.WriteLine("Galon Estadounidense = " + m * 0.264172);
+                                                Console.WriteLine("Galon imperial = " + m * 0.219969);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 2:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Mililitros son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Litros = " + m * 0.001);
+                                                Console.WriteLine("Metro cubicos = " + m * 0.000001);
+                                                Console.WriteLine("Onzas = " + m * 0.03814);
+                                                Console.WriteLine("Pie cubico = " + m * 0.000035315);
+                                                Console.WriteLine("Pulgada cubica = " + m * 0.0610237);
+                                                Console.WriteLine("Galon Estadounidense = " + m * 0.000264172);
+                                                Console.WriteLine("Galon imperial = " + m * 0.000219969);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 3:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Metros cubicos son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Litros = " + m * 1000);
+                                                Console.WriteLine("Mililitros = " + m * 0.000001);
+                                                Console.WriteLine("Onzas = " + m * 33814);
+                                                Console.WriteLine("Pie cubico = " + m * 35.3147);
+                                                Console.WriteLine("Pulgada cubica = " + m * 61023.7);
+                                                Console.WriteLine("Galon Estadounidense = " + m * 264.172);
+                                                Console.WriteLine("Galon imperial = " + m * 219.969);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 4:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Onzas son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Litros = " + m * 0.0295735);
+                                                Console.WriteLine("Mililitros = " + m * 29.5735);
+                                                Console.WriteLine("Metros cubicos = " + m * 0.00002957);
+                                                Console.WriteLine("Pie cubico = " + m * 0.001044);
+                                                Console.WriteLine("Pulgada cubica = " + m * 1.805);
+                                                Console.WriteLine("Galon Estadounidense = " + m * 0.007813);
+                                                Console.WriteLine("Galon imperial = " + m * 0.006505);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 5:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Pies cubicos son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Litros = " + m * 28.32);
+                                                Console.WriteLine("Mililitros = " + m * 28316846);
+                                                Console.WriteLine("Metro cubico = " + m * 0.02832);
+                                                Console.WriteLine("Onzas = " + m * 957.5);
+                                                Console.WriteLine("Pulgada cubica = " + m * 1728);
+                                                Console.WriteLine("Galon Estadounidense = " + m * 7.481);
+                                                Console.WriteLine("Galon imperial = " + m * 6.229);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 6:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Pulgadas cubicas son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Litros = " + m * 0.01639);
+                                                Console.WriteLine("Mililitros = " + m * 16.39);
+                                                Console.WriteLine("Metros cubicos = " + m * 0.00001639);
+                                                Console.WriteLine("Onzas = " + m * 0.5541);
+                                                Console.WriteLine("Pie cubico = " + m * 0.0005787);
+                                                Console.WriteLine("Galon Estadounidense = " + m * 0.004329);
+                                                Console.WriteLine("Galon imperial = " + m * 0.003605);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 7:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Galones Estadounidenses son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Litros = " + m * 3.785);
+                                                Console.WriteLine("Mililitros = " + m * 3785);
+                                                Console.WriteLine("Metros cubicos = " + m * 0.003785);
+                                                Console.WriteLine("Onzas = " + m * 128);
+                                                Console.WriteLine("Pie cubico = " + m * 0.1337);
+                                                Console.WriteLine("Pulgada cubica = " + m * 231);
+                                                Console.WriteLine("Galon imperial = " + m * 0.8327);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 8:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresa valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Galones Imperiales son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Litros = " + m * 4.546);
+                                                Console.WriteLine("Mililitros = " + m * 4546);
+                                                Console.WriteLine("Metros cubicos = " + m * 0.004546);
+                                                Console.WriteLine("Onzas = " + m * 153.7);
+                                                Console.WriteLine("Pie cubico = " + m * 0.1605);
+                                                Console.WriteLine("Pulgada cubica = " + m * 277.4);
+                                                Console.WriteLine("Galon Estadounidense = " + m * 1.201);
+                                                Console.ReadKey();
+                                                goto fvo;
+                                            case 9:
+                                                goto unidm;
+
+                                        }
+                                        break;
+                                    case 3:
+                                        Console.CursorVisible = false;
+                                        x = 7;
+                                        string[] ma = new string[x];
+                                    fma:
+                                        ma[0] = "Elije una opcion";
+                                        ma[1] = "Tonelada";
+                                        ma[2] = "Kilogramo";
+                                        ma[3] = "Gramo";
+                                        ma[4] = "Libra";
+                                        ma[5] = "Onza";
+                                        ma[6] = "Volver";
+                                        c = Menu(ma, x); ;
+                                        Console.Clear();
+                                        switch (c)
+                                        {
+                                            case 1:
+                                                double m;
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Toneladas son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Kilogramos = " + m * 1000);
+                                                Console.WriteLine("Gramos = " + m * 100000);
+                                                Console.WriteLine("Libras = " + m * 2204.62);
+                                                Console.WriteLine("Onzas = " + m * 35274);
+                                                Console.ReadKey();
+                                                goto fma;
+                                            case 2:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Kilogramos son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Toneladas = " + m * 0.001);
+                                                Console.WriteLine("Gramos = " + m * 1000);
+                                                Console.WriteLine("Libras = " + m * 2.20462);
+                                                Console.WriteLine("Onzas = " + m * 35.274);
+                                                Console.ReadKey();
+                                                goto fma;
+                                            case 3:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Gramos son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Toneladas = " + m * 0.000006);
+                                                Console.WriteLine("Kilogramos = " + m * 0.001);
+                                                Console.WriteLine("Libras = " + m * 0.00220432);
+                                                Console.WriteLine("Onzas = " + m * 0.035274);
+                                                Console.ReadKey();
+                                                goto fma;
+                                            case 4:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Libras son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Toneladas = " + m * 0.000453592);
+                                                Console.WriteLine("Kilogramos = " + m * 0.453592);
+                                                Console.WriteLine("Gramos = " + m * 453.592);
+                                                Console.WriteLine("Onzas = " + m * 16);
+                                                Console.ReadKey();
+                                                goto fma;
+                                            case 5:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + " Onzas son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Toneladas = " + m * 0.000002835);
+                                                Console.WriteLine("Kilogramos = " + m * 0.02835);
+                                                Console.WriteLine("Gramos = " + m * 28.35);
+                                                Console.WriteLine("Libras = " + m * 0.0625);
+                                                Console.ReadKey();
+                                                goto fma;
+                                            case 6:
+                                                goto unidm;
+                                        }
+                                        break;
+                                    case 4:
+                                        Console.CursorVisible = false;
+                                        x = 5;
+                                        string[] tem = new string[x];
+                                    ftem:
+                                        tem[0] = "ELije una opcion";
+                                        tem[1] = "Grados Celsius";
+                                        tem[2] = "Grados Farenheit";
+                                        tem[3] = "Grados Kelvin";
+                                        tem[4] = "Volver";
+                                        c = Menu(tem, x);
+                                        Console.Clear();
+                                        switch (c)
+                                        {
+                                            case 1:
+                                                double m;
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + "° Celsius son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Grados Farenheit = " + (m * 9 / 5) + 32);
+                                                Console.WriteLine("Grados Kelvin = " + m + 273.15);
+                                                Console.ReadKey();
+                                                goto ftem;
+                                            case 2:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + "° Farenheit son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Grados Celsius = " + (m - 32) * 5 / 9);
+                                                Console.WriteLine("Grados Kelvin = " + (m - 32) * 5 / 9 + 273.15);
+                                                Console.ReadKey();
+                                                goto ftem;
+                                            case 3:
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Ingresar valor a convertir");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                m = Convert.ToDouble(Console.ReadLine());
+                                                Console.Clear();
+                                                Console.WriteLine(m + "° Kelvin son:");
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.WriteLine("Grados Celsius = " + (m - 273.15));
+                                                Console.WriteLine("Grados Farenheit = " + (m - 273.15) * 9 / 5 + 32);
+                                                Console.ReadKey();
+                                                goto ftem;
+                                            case 4:
+                                                goto unidm;
+                                        }
+                                        break;
+                                        goto MenuFi;
+                                    case 5:
+                                        goto MenuPr;
+                                        break;
+                                }
+                                break;
                         }
-                        break;
                     }
+                    break;
                 case 4://Salir
                     {
                         string[] Mn5 = new string[x];
@@ -537,6 +1205,7 @@ namespace Menu_v1
                         break;
                     }
                 default:
+
                     break;
             }
             Console.Clear();
@@ -843,5 +1512,10 @@ namespace Menu_v1
             }
             return De;
         }
+
+
+
+
+
     }
 }

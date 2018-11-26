@@ -33,9 +33,9 @@ namespace Menu_v1
                         string[] Mn2 = new string[x];
                         Mn2[0] = "Elige la opcion que mas te convenga";
                         Mn2[1] = "Incognitas";
-                        Mn2[2] = "Vectores";
-                        Mn2[3] = "Matrices";
-                        Mn2[4] = "Volver";
+                        Mn2[2] = "Matrices";
+                        Mn2[3] = "Volver";
+                        // Mn2[4] = "Volver";
                         c = Menu(Mn2, x);
                         switch (c)
                         {

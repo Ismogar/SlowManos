@@ -22,7 +22,7 @@ namespace Menu_v1
 
         public void ve()
         {
-            Console.ForegroundColor = ConsoleColor.Green;  
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(X, y);
             for (int i = k; i < longitudvec; i++)
             {
@@ -54,12 +54,8 @@ namespace Menu_v1
     }
     class MainClass
     {
-        //Avr si si funciona tis weassssssssssswsw
-        //slow puedes ver esto?sssssss holixd
         int x, X, y, index, k, longitudvec;
         string s;
-
-
         static void dibujarescrito(string[] str)
         {
             Console.CursorVisible = true;
@@ -92,15 +88,13 @@ namespace Menu_v1
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             int x = 5, c;
             string[] Mn1 = new String[x];
-
-               string[] str = new string[]  { " 00     00  00   000   00   00  000000000 0    0 00   00",
+            string[] str = new string[]  { " 00     00  00   000   00   00  000000000 0    0 00   00",
                                               "0  00   00  00  00 00  00   00  000000000 0    0 000 000",
                                               "0  00   00  00 00  000 0000 00     000    0    0 00 0 00  ",
                                               "0  00   00  00 0000000 00 0 00     000    0    0 00   00 ",
                                               "0  0    00  00 00   00 00 0000     000    0    0 00   00 ",
                                               " 00 0   000000 00   00 00  000     000     0000  00   00   "};
             dibujarescrito(str);
-
             Console.CursorVisible = false;
         MenuPr:
             Mn1[0] = "Elige la opcion que mas te convenga";
@@ -114,25 +108,22 @@ namespace Menu_v1
                 case 1://Algebra Lineal
                     {
                         Console.Clear();
-                str = new string[] {     " 000   00      0 0000 000000 000000  000000     000",
+                        str = new string[] {     " 000   00      0 0000 000000 000000  000000     000",
                                          "00 00  00     0       0      00   00 00   00   00 00",
                                          "00000  00     0   000 000000 00   0  00  00    00000",
                                          "00 00  00     0     0 0      00    0 00000     00 00",
                                          "00 00  00     0     0 0      00   00 00  00    00 00",
                                          "00 00  000000  00000  000000 000000  00    00  00 00"};
-
                         dibujarescrito(str);
                         Console.Clear();
-
-
                     MenuAlL:
-                        string[] Mn2 = new string[x];
+                        string[] Mn2 = new string[4];
                         Mn2[0] = "Elige la opcion que mas te convenga";
                         Mn2[1] = "Incognitas";
                         Mn2[2] = "Matrices";
                         Mn2[3] = "Volver";
                         // Mn2[4] = "Volver";
-                        c = Menu(Mn2, 5);
+                        c = Menu(Mn2, 4);
                         switch (c)
                         {
                             case 1:
@@ -141,8 +132,7 @@ namespace Menu_v1
                             case 2://Matrices
                                 {
                                 MenuMa:
-                                    x = 7;
-                                    string[] Mm1 = new string[x];
+                                    string[] Mm1 = new string[7];
                                     Mm1[0] = "Elige la opcion que mas te convenga";
                                     Mm1[1] = "Operaciones con matrices";
                                     Mm1[2] = "Determinantes";
@@ -150,15 +140,14 @@ namespace Menu_v1
                                     Mm1[4] = "Adjunta";
                                     Mm1[5] = "Inversa";
                                     Mm1[6] = "Volver";
-                                    c = Menu(Mm1, x);
+                                    c = Menu(Mm1, 7);
                                     Console.Clear();
                                     switch (c)
                                     {
                                         case 1://Operaciones con Matrices
                                             {
                                             MenuMaOp:
-                                                x = 6;
-                                                string[] MO = new string[x];
+                                                string[] MO = new string[6];
                                                 int y1 = 1, y2 = 1, z = 1;
                                                 int o = 1, cx = 1;
                                                 int[,] m1 = new int[y1, z];
@@ -169,7 +158,7 @@ namespace Menu_v1
                                                 MO[3] = "Multiplicacion";
                                                 MO[4] = "Division";
                                                 MO[5] = "Volver";
-                                                c = Menu(MO, x);
+                                                c = Menu(MO, 6);
                                                 Console.Clear();
                                                 switch (c)
                                                 {
@@ -583,13 +572,13 @@ namespace Menu_v1
                         Console.Clear();
                     MenuQu:
                         x = 5;
-                        string[] Mn3 = new string[x];
+                        string[] Mn3 = new string[5];
                         Mn3[0] = "Elige la opcion que mas te convenga";
                         Mn3[1] = "Balanceo";
                         Mn3[2] = "Configuracion Electronica";
                         Mn3[3] = "Tabla Periodica";
                         Mn3[4] = "Volver";
-                        c = Menu(Mn3, x);
+                        c = Menu(Mn3, 5);
                         switch (c)
                         {
                             case 1:
@@ -618,13 +607,12 @@ namespace Menu_v1
                         dibujarescrito(str);
                         Console.Clear();
                     MenuFi:
-                        x = 4;
-                        string[] Mn4 = new string[x];
+                        string[] Mn4 = new string[4];
                         Mn4[0] = "Elige la opcion que mas te convenga";
                         Mn4[1] = "MRU";
                         Mn4[2] = "Conversor";
                         Mn4[3] = "Volver";
-                        c = Menu(Mn4, x);
+                        c = Menu(Mn4, 4);
                         switch (c)
                         {
                             case 1://MRU
@@ -700,22 +688,21 @@ namespace Menu_v1
                                 x = 7;
                                 c = 1;
                                 Console.CursorVisible = false;
-                                string[] CU = new string[x];
                             unidm:
+                                string[] CU = new string[6];
                                 CU[0] = "Elije una opcion";
                                 CU[1] = "Longitud";
                                 CU[2] = "Volumen";
                                 CU[3] = "Masa";
                                 CU[4] = "Temperatura";
                                 CU[5] = "Volver";
-                                c = Menu(CU, x);
+                                c = Menu(CU, 6);
                                 switch (c)
                                 {
                                     case 1:
-                                        Console.CursorVisible = false;
-
-                                        string[] Lo = new string[10];
                                     flo:
+                                        Console.CursorVisible = false;
+                                        string[] Lo = new string[10];
                                         Lo[0] = "Elije una unidad";
                                         Lo[1] = "Kilometro";
                                         Lo[2] = "Metro";
@@ -726,7 +713,7 @@ namespace Menu_v1
                                         Lo[7] = "Pie";
                                         Lo[8] = "Pulgada";
                                         Lo[9] = "Volver";
-                                        c = Menu(Lo, x);
+                                        c = Menu(Lo, 10);
                                         Console.Clear();
                                         switch (c)
                                         {
@@ -873,10 +860,10 @@ namespace Menu_v1
                                         }
                                         break;
                                     case 2:
+                                    fvo:
                                         Console.CursorVisible = false;
                                         x = 11;
-                                        string[] vo = new string[x];
-                                    fvo:
+                                        string[] vo = new string[10];
                                         vo[0] = "Elije una opcion";
                                         vo[1] = "Litro";
                                         vo[2] = "Mililitro";
@@ -887,7 +874,7 @@ namespace Menu_v1
                                         vo[7] = "Galón Estadounidense";
                                         vo[8] = "Galón imperia";
                                         vo[9] = "Volver";
-                                        c = Menu(vo, x);
+                                        c = Menu(vo, 10);
                                         Console.Clear();
                                         switch (c)
                                         {
@@ -1034,10 +1021,9 @@ namespace Menu_v1
                                         }
                                         break;
                                     case 3:
-                                        Console.CursorVisible = false;
-                                        x = 7;
-                                        string[] ma = new string[x];
                                     fma:
+                                        Console.CursorVisible = false;
+                                        string[] ma = new string[7];
                                         ma[0] = "Elije una opcion";
                                         ma[1] = "Tonelada";
                                         ma[2] = "Kilogramo";
@@ -1045,7 +1031,7 @@ namespace Menu_v1
                                         ma[4] = "Libra";
                                         ma[5] = "Onza";
                                         ma[6] = "Volver";
-                                        c = Menu(ma, x); ;
+                                        c = Menu(ma, 7); ;
                                         Console.Clear();
                                         switch (c)
                                         {
@@ -1125,16 +1111,15 @@ namespace Menu_v1
                                         }
                                         break;
                                     case 4:
-                                        Console.CursorVisible = false;
-                                        x = 5;
-                                        string[] tem = new string[x];
                                     ftem:
+                                        Console.CursorVisible = false;
+                                        string[] tem = new string[5];
                                         tem[0] = "ELije una opcion";
                                         tem[1] = "Grados Celsius";
                                         tem[2] = "Grados Farenheit";
                                         tem[3] = "Grados Kelvin";
                                         tem[4] = "Volver";
-                                        c = Menu(tem, x);
+                                        c = Menu(tem, 5);
                                         Console.Clear();
                                         switch (c)
                                         {
@@ -1190,11 +1175,11 @@ namespace Menu_v1
                     break;
                 case 4://Salir
                     {
-                        string[] Mn5 = new string[x];
+                        string[] Mn5 = new string[3];
                         Mn5[0] = "¿Seguro?";
                         Mn5[1] = "Si";
                         Mn5[2] = "No";
-                        c = Menu(Mn5, x);
+                        c = Menu(Mn5, 3);
                         switch (c)
                         {
                             case 2:

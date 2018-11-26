@@ -14,7 +14,7 @@ namespace Menu_v1
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             int x = 5, c;
-            string[] Mn1 = new String[x];
+            strinºg[] Mn1 = new String[x];
             Console.CursorVisible = false;
         MenuPr:
             x = 5;

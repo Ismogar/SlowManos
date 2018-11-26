@@ -101,7 +101,7 @@ namespace Menu_v1
                                               " 00 0   000000 00   00 00  000     000     0000  00   00   "};
             dibujarescrito(str);
 
-            Console.CursorVisible = false;//awanten :'v
+            Console.CursorVisible = false;
         MenuPr:
             Mn1[0] = "Elige la opcion que mas te convenga";
             Mn1[1] = "Algebra Lineal";

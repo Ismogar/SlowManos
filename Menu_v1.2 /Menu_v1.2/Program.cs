@@ -26,20 +26,20 @@ namespace Menu_v1
                 case 1://Algebra Lineal
                     {
                     MenuAlL:
-                        string[] Mn2 = new string[5];
+                        string[] Mn2 = new string[4];
                         Mn2[0] = "Elige la opcion que mas te convenga";
                         Mn2[1] = "Incognitas";
-                        Mn2[2] = "Vectores";
-                        Mn2[3] = "Matrices";
-                        Mn2[4] = "Volver";
-                        c = Menu(Mn2, 5);
+                        Mn2[2] = "Matrices";
+                        // Mn2[3] = "Matrices";
+                        Mn2[3] = "Volver";
+                        c = Menu(Mn2, 4);
                         switch (c)
                         {
                             case 1:
-                                goto MenuAlL;
-                            case 2:
-                                goto MenuAlL;
-                            case 3://Matrices
+                                goto MenuAlL;                       
+                            // case 2: holixd
+                            //     goto MenuAlL;
+                            case 2://Matrices
                                 {
                                 MenuMa:
                                     string[] Mm1 = new string[7];
@@ -564,7 +564,7 @@ namespace Menu_v1
                                     }
                                 }
                                 break;
-                            case 4:
+                            case 3:
                                 goto MenuPr;
                             default:
                                 break;
@@ -924,7 +924,7 @@ namespace Menu_v1
                         }
                     }
                     break;
-            }
+            }    
             for (int i = 0; i < x1; i++)
             {
                 for (int j = 0; j < x1; j++)

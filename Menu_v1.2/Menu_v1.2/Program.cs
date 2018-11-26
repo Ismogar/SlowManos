@@ -660,6 +660,7 @@ namespace Menu_v1
                         switch (c)
                         {
                             case 1://MRU
+                                Console.Clear();
                                 string d, v, t;
                                 Console.ForegroundColor = ConsoleColor.DarkGray;
                                 Console.WriteLine("Ingresa un '?' en la incoginta");
@@ -721,9 +722,10 @@ namespace Menu_v1
                                 {
                                     Console.SetCursorPosition(10, 4);
                                     Console.ForegroundColor = ConsoleColor.Cyan;
-                                    Console.WriteLine("Ya pusiste todasxd");
+                                    Console.WriteLine("Debes tener almenos una incognita.");
                                 }
 
+                                Console.ReadKey();
                                 goto MenuFi;
                             case 2:
                                 x = 4;

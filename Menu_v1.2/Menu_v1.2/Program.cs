@@ -88,7 +88,7 @@ namespace Menu_v1
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             int x = 5, c;
             string[] Mn1 = new String[x];
-            string[] str = new string[]  { " 00     00  00   000   00   00  000000000 0    0 00   00",
+            string[] str = { " 00     00  00   000   00   00  000000000 0    0 00   00",
                                               "0  00   00  00  00 00  00   00  000000000 0    0 000 000",
                                               "0  00   00  00 00  000 0000 00     000    0    0 00 0 00  ",
                                               "0  00   00  00 0000000 00 0 00     000    0    0 00   00 ",
@@ -656,7 +656,7 @@ namespace Menu_v1
                         Mn4[2] = "MRUA";
                         Mn4[3] = "Conversor";
                         Mn4[4] = "Volver";
-                        c = Menu(Mn4, 4);
+                        c = Menu(Mn4, 5);
                         switch (c)
                         {
                             case 1://MRU
@@ -784,11 +784,11 @@ namespace Menu_v1
                                                 d = (((double.Parse(Vo)) + (double.Parse(Vf))) / 2).ToString();
                                                 d = ((double.Parse(d) * (Double.Parse(t))).ToString());
                                             }
-                                            if (Vf == "?" && d == "?" && Vo != "?" && a != "?" && t != "?") ;
+                                            if (Vf == "?" && d == "?" && Vo != "?" && a != "?" && t != "?") 
                                             {
                                                 Vf = ((Double.Parse(Vo)) + ((double.Parse(a)) * (double.Parse(t)))).ToString();
                                             }
-                                            if (Vf == "?" && t == "?" && Vo != "?" && a != "?" && d != "?") ;
+                                            if (Vf == "?" && t == "?" && Vo != "?" && a != "?" && d != "?") 
                                             {
                                                 Vf = (((Double.Parse(Vo)) * (Double.Parse(Vo))) + (2 * ((Double.Parse(a)) * (double.Parse(d))))).ToString();
                                                 Vf = (Math.Pow((Double.Parse(Vf)), 0.5)).ToString();
@@ -1289,11 +1289,9 @@ namespace Menu_v1
                                                     case 4:
                                                         goto unidm;
                                                 }
-                                                break;
                                                 goto MenuFi;
                                             case 5:
                                                 goto MenuPr;
-                                                break;
                                         }
                                         break;
                                 }

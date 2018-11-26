@@ -37,7 +37,7 @@ namespace Menu_v1
                         {
                             case 1:
                                 goto MenuAlL;                       
-                            // case 2: holixd
+                            // case 2: holixd                       slow
                             //     goto MenuAlL;
                             case 2://Matrices
                                 {

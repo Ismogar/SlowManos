@@ -6,6 +6,8 @@ namespace Menu_v1
 {
     class EText
     {
+        string[] El = {"H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar",""};
+        string[] ElNa={};
         int x, X, y, index, k, longitudvec;
         string s;
         public EText(string s, int x, int y)
@@ -77,7 +79,7 @@ namespace Menu_v1
             }
             Console.ReadKey();
             Console.Clear();
-            
+
 
         }
 
@@ -629,6 +631,10 @@ namespace Menu_v1
                             case 2:
                                 goto MenuQu;
                             case 3:
+                                string ElX;
+                                Console.Write("Ingresa el elemento quimico que buscas :");
+                                ElX = Console.ReadLine();
+
                                 goto MenuQu;
                             case 4:
                                 goto MenuPr;
@@ -775,7 +781,7 @@ namespace Menu_v1
                                             if (d == "?" && a != "?" && Vo != "?" && t != "?")
                                             {
                                                 Console.SetCursorPosition(10, 4);
-                                                d = ((double.Parse(Vo) * double.Parse(t)) + (((double.Parse(a) * (double.Parse(t) * double.Parse(t))) / 2).ToString()));
+                                                d = ((double.Parse(Vo) * double.Parse(t)) + ((double.Parse(a) * (double.Parse(t) * double.Parse(t))) / 2)).ToString();
 
                                             }
                                             if (d == "?" && a == "?" && Vo != "?" && t != "?" && Vf != "?")
@@ -784,11 +790,11 @@ namespace Menu_v1
                                                 d = (((double.Parse(Vo)) + (double.Parse(Vf))) / 2).ToString();
                                                 d = ((double.Parse(d) * (Double.Parse(t))).ToString());
                                             }
-                                            if (Vf == "?" && d == "?" && Vo != "?" && a != "?" && t != "?") 
+                                            if (Vf == "?" && d == "?" && Vo != "?" && a != "?" && t != "?")
                                             {
                                                 Vf = ((Double.Parse(Vo)) + ((double.Parse(a)) * (double.Parse(t)))).ToString();
                                             }
-                                            if (Vf == "?" && t == "?" && Vo != "?" && a != "?" && d != "?") 
+                                            if (Vf == "?" && t == "?" && Vo != "?" && a != "?" && d != "?")
                                             {
                                                 Vf = (((Double.Parse(Vo)) * (Double.Parse(Vo))) + (2 * ((Double.Parse(a)) * (double.Parse(d))))).ToString();
                                                 Vf = (Math.Pow((Double.Parse(Vf)), 0.5)).ToString();
@@ -1297,7 +1303,7 @@ namespace Menu_v1
                                 }
                                 break;
                         }
-                     }
+                    }
                     break;
                 case 4://Salir
                     {
@@ -1623,10 +1629,5 @@ namespace Menu_v1
             }
             return De;
         }
-
-
-
-
-
     }
 }

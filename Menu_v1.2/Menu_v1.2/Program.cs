@@ -841,6 +841,9 @@ namespace Menu_v1
                                                             goto MenuMaOp;
                                                         }
                                                     case 4:
+                                                        Console.Clear();
+                                                        Console.WriteLine("EStamos trabajando en esto.");
+                                                        Console.ReadKey();
                                                         goto MenuMaOp;
                                                     case 5:
                                                         goto MenuMa;
@@ -952,52 +955,55 @@ namespace Menu_v1
                                                         }
                                                     case 3://Matriz NxN
                                                         {
-                                                            int nFC;
-                                                            Console.WriteLine("Matriz NxN");
-                                                            Console.WriteLine("Nota: Solo matrices cuadradas.");
-                                                            Console.WriteLine("Numero de filas y de columnas: ");
-                                                        AsignarnFC:
-                                                            try
-                                                            {
-                                                                Console.SetCursorPosition(31, 2);
-                                                                nFC = int.Parse(Console.ReadLine());
-                                                            }
-                                                            catch (Exception)
-                                                            {
-                                                                Console.SetCursorPosition(0, 20);
-                                                                Console.Write("ERROR: Introduce un numero");
-                                                                goto AsignarnFC;
-                                                            }
-                                                            int[,] M = new int[nFC, nFC];
-                                                            int[,] Maux = new int[nFC, nFC];
-                                                            int[,] R = new int[nFC - 1, nFC - 1];
-                                                            M = AsignarValorMatriz(nFC, nFC, 3);
-                                                            int xm = 0, ym = 0;
-                                                            for (int i = 0; i < nFC; i++)
-                                                            {
-                                                                for (int j = 0; j < nFC; j++)
-                                                                {
-                                                                    if (M[j, i] == 1)
-                                                                    {
-                                                                        xm = j;
-                                                                        ym = i;
-                                                                    }
-                                                                }
-                                                            }
-                                                            for (int i = 0; i < nFC; i++)
-                                                            {
-                                                                for (int j = 0; j < nFC; j++)
-                                                                {
-                                                                    Maux[i, j] = (-1 * M[xm, j]) * (M[i, ym] / M[xm, ym]);
-                                                                }
-                                                            }
-                                                            for (int i = 0; i < nFC; i++)
-                                                            {
-                                                                for (int j = 0; j < nFC; j++)
-                                                                {
-                                                                    M[i, j] += Maux[i, j];
-                                                                }
-                                                            }
+                                                            Console.Clear();
+                                                            Console.WriteLine("EStamos trabajando en esto.");
+                                                            Console.ReadKey();
+                                                            //     int nFC;
+                                                            //     Console.WriteLine("Matriz NxN");
+                                                            //     Console.WriteLine("Nota: Solo matrices cuadradas.");
+                                                            //     Console.WriteLine("Numero de filas y de columnas: ");
+                                                            // AsignarnFC:
+                                                            //     try
+                                                            //     {
+                                                            //         Console.SetCursorPosition(31, 2);
+                                                            //         nFC = int.Parse(Console.ReadLine());
+                                                            //     }
+                                                            //     catch (Exception)
+                                                            //     {
+                                                            //         Console.SetCursorPosition(0, 20);
+                                                            //         Console.Write("ERROR: Introduce un numero");
+                                                            //         goto AsignarnFC;
+                                                            //     }
+                                                            //     int[,] M = new int[nFC, nFC];
+                                                            //     int[,] Maux = new int[nFC, nFC];
+                                                            //     int[,] R = new int[nFC - 1, nFC - 1];
+                                                            //     M = AsignarValorMatriz(nFC, nFC, 3);
+                                                            //     int xm = 0, ym = 0;
+                                                            //     for (int i = 0; i < nFC; i++)
+                                                            //     {
+                                                            //         for (int j = 0; j < nFC; j++)
+                                                            //         {
+                                                            //             if (M[j, i] == 1)
+                                                            //             {
+                                                            //                 xm = j;
+                                                            //                 ym = i;
+                                                            //             }
+                                                            //         }
+                                                            //     }
+                                                            //     for (int i = 0; i < nFC; i++)
+                                                            //     {
+                                                            //         for (int j = 0; j < nFC; j++)
+                                                            //         {
+                                                            //             Maux[i, j] = (-1 * M[xm, j]) * (M[i, ym] / M[xm, ym]);
+                                                            //         }
+                                                            //     }
+                                                            //     for (int i = 0; i < nFC; i++)
+                                                            //     {
+                                                            //         for (int j = 0; j < nFC; j++)
+                                                            //         {
+                                                            //             M[i, j] += Maux[i, j];
+                                                            //         }
+                                                            //     }
                                                             goto MenuMaDe;
                                                         }
                                                     case 4:
@@ -1091,6 +1097,9 @@ namespace Menu_v1
                                                 goto MenuMa;
                                             }
                                         case 5://Inversa
+                                            Console.Clear();
+                                            Console.WriteLine("EStamos trabajando en esto.");
+                                            Console.ReadKey();
                                             goto MenuMa;
                                         case 6:
                                             goto MenuAlL;
@@ -1129,6 +1138,9 @@ namespace Menu_v1
                         switch (c)
                         {
                             case 1:
+                                Console.Clear();
+                                Console.WriteLine("EStamos trabajando en esto.");
+                                Console.ReadKey();
                                 goto MenuQu;
                             case 2:
                                 string ElX, NumsOx;
@@ -1336,6 +1348,7 @@ namespace Menu_v1
                                 }
                                 goto MenuQu;
                             case 3:
+
                                 goto MenuPr;
 
                             default:
@@ -1447,8 +1460,6 @@ namespace Menu_v1
                                     Console.ReadKey();
                                     goto MenuFi;
                                 }
-
-
                                 Console.ReadKey();
                                 goto MenuFi;
                             case 2:
@@ -2353,11 +2364,9 @@ namespace Menu_v1
                             default:
                                 break;
                         }
-                        break;
                     }
-                default:
-
                     break;
+
             }
             Console.Clear();
             Console.WriteLine("Adios");

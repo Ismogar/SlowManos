@@ -86,7 +86,7 @@ namespace Menu_v1
             string[] El = { "H", "He", "Li", "Be", "B", "C", "N", "O", "F", "Ne", "Na", "Mg", "Al", "Si", "P", "S", "Cl", "Ar", "K", "Ca", "Sc", "Ti", "V", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br", "Kr", "Rb", "Sr", "Y", "Zr", "Nb", "Mo", "Tc", "Ru", "Rh", "Pd", "Ag", "Cd", "In", "Sn", "Sb", "Te", "I", "Xe", "Cs", "Ba", "La", "Ce", "Pr", "Nd", "Pm", "Sm", "Eu", "Gd", "Tb", "Dy", "Ho", "Er", "Tm", "Yb", "Lu", "Hf", "Ta", "W", "Re", "Os", "Ir", "Pt", "Au", "Hg", "Tl", "Pb", "Bi", "Po", "At", "Rn", "Fr", "Ra", "Ac", "Th", "Pa", "U", "Np", "Pu", "Am", "Cm", "Bk", "Cf", "Es", "Fm", "Md", "No", "Lr", "Rf", "Db", "Sg", "Bh", "Hs", "Ds", "Rg", "Cn", "Nh", "Fl", "Mc", "Lv", "Ts", "Og" };
             string[] ElMA = { "1.00", "4.00"/*Heliox2*/, "6.94", "9.01", "10.81", "12.01", "14.00", "15.99", "18.99", "20.18"/*Neon*/, "22.99", "24.30", "26.98", "28.05", "30.97", "32.02", "35.45", "39.94"/*Argon*/, "39.09", "40.07", "44.95", "47.86", "50.94", "51.91", "54.93", "55.84", "58.93", "58.69", "63.54", "65.38", "69.72", "72.63", "74.92", "78.97", "79.90", "83.79"/*Kripton*/, "85.46", "87.62", "88.90", "91.22", "92.90", "95.95", "98", "101.07", "102.91", "106.42", "107.87", "112.41", "114.82", "118.71", "121.76", "127.60", "126.90", "131.29"/*Xenon*/, "132.91", "137.33"/*Serie lantano*/, "138.91", "140.12", "140.91", "144.24", "145", "150.96", "151.96", "157.25", "158.93", "162.50", "164.93", "167.26", "168.93", "173.05", "174.97"/*Fin Serie lantano*/, "178.49", "180.95", "183.84", "186.21", "190.23", "1922.22", "195.08", "196.97", "200.59", "204.38", "207.2", "208.98", "209", "210", "222"/*Randon*/, "223", "226"/*Serie actinidos*/, "227", "232.04", "231.04", "238.03", "237", "244", "243", "247", "247", "251", "252", "257", "258", "259", "266"/*Fin serie actinidos*/, "267", "268", "269", "270", "277", "278", "281", "282", "285", "286", "289", "290", "293", "294", "294"/*yaxd*/};
             string[,] ElNO = { { "+1", "-1", "", "", "", "", "", "", "", "" }, { "0", "", "", "", "", "", "", "", "", "" },/*Helio */ { "+1", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+4", "-4", "", "", "", "", "", "", "" }, { "+1", "-1", "+2", "-2", "+3", "-3", "5", "", "", "" }, { "-1", "+2", "-2", "", "", "", "", "", "", "" }, { "-1", "", "", "", "", "", "", "", "", "" }, { "0", "", "", "", "", "", "", "", "", "" }/*Neon */, { "+1", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+4", "", "", "", "", "", "", "", "", "" }, { "+3", "-3", "+4", "+5", "", "", "", "", "", "" }, { "+2", "-2", "+4", "+6", "", "", "", "", "", "" }, { "+1", "-1", "+3", "+5", "+7", "", "", "", "", "" }, { "0", "", "", "", "", "", "", "", "", "" }/*Argon */, { "+1", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "", "", "", "", "", "" }, { "+2", "+3", "+6", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "+7", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+1", "+2", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+4", "", "", "", "", "", "", "", "" }, { "+3", "-3", "+5", "", "", "", "", "", "", "" }, { "-2", "+4", "+6", "", "", "", "", "", "", "" }, { "+1", "-1", "+3", "+5", "", "", "", "", "", "" }, { "+2", "+4", "+6", "", "", "", "", "", "", "" }/*Kripton */, { "+1", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "+6", "", "", "", "", "" }, { "+4", "+5", "+6", "+7", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "+6", "", "", "", "", "" }, { "+2", "+3", "+4", "", "", "", "", "", "", "" }, { "+2", "+4", "", "", "", "", "", "", "", "" }, { "+1", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+4", "", "", "", "", "", "", "", "" }, { "+3", "-3", "+5", "", "", "", "", "", "", "" }, { "-2", "+4", "+6", "", "", "", "", "", "", "" }, { "+1", "-1", "+5", "+7", "", "", "", "", "", "" }, { "+2", "+4", "+6", "+8", "", "", "", "", "", "" }/*Xenon */, { "+1", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" },/*Serie del lantano*/{ "+3", "", "", "", "", "", "", "", "", "" }, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }/*Fin serie del lantano */, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+4", "+5", "", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "+6", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "+6", "+7", "", "", "", "" }, { "+3", "+4", "+6", "", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "+6", "", "", "", "", "" }, { "+2", "+4", "", "", "", "", "", "", "", "" }, { "+1", "+3", "", "", "", "", "", "", "", "" }, { "+1", "+2", "", "", "", "", "", "", "", "" }, { "+1", "+3", "", "", "", "", "", "", "", "" }, { "+2", "+4", "", "", "", "", "", "", "", "" }, { "+3", "-3", "+5", "", "", "", "", "", "", "" }, { "+2", "+4", "", "", "", "", "", "", "", "" }, { "+1", "-1", "+5", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }/*Radon */, { "+1", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }/*Serie de Actinio */, { "+3", "", "", "", "", "", "", "", "", "" }, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+3", "+4", "+5", "", "", "", "", "", "", "" }, { "+3", "+4", "+5", "+6", "", "", "", "", "", "" }, { "+3", "+4", "+5", "+6", "", "", "", "", "", "" }, { "+3", "+4", "+5", "+6", "", "", "", "", "", "" }, { "+2", "+3", "+4", "+5", "+6", "", "", "", "", "" }, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+3", "+4", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "+3", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }/*Fin de serie del actinio */, { "+4", "", "", "", "", "", "", "", "", "" }, { "+5", "", "", "", "", "", "", "", "", "" }, { "+6", "", "", "", "", "", "", "", "", "" }, { "+7", "", "", "", "", "", "", "", "", "" }, { "+3", "", "", "", "", "", "", "", "", "" }, { "+2", "", "", "", "", "", "", "", "", "" }, { "No tiene numero de oxidacion", "", "", "", "", "", "", "", "", "" }, { "No tiene numero de oxidacion", "", "", "", "", "", "", "", "", "" }, { "No tiene numero de oxidacion", "", "", "", "", "", "", "", "", "" }, { "No tiene numero de oxidacion", "", "", "", "", "", "", "", "", "" }, { "No tiene numero de oxidacion", "", "", "", "", "", "", "", "", "" }, { "No tiene numero de oxidacion", "", "", "", "", "", "", "", "", "" }, { "No tiene numero de oxidacion", "", "", "", "", "", "", "", "", "" } };
-            string[] ElN = {"Hidrogeno", "Helio", "Litio", "Berilio", "Boro", "Carbono", "Nitrogeno", "Oxigeno", "Fluor", "Neon", "Sodio", "Magnesio", "Aluminio", "Silicio", "Fosforo", "Azufre", "Cloro", "Argon", "Potasio", "Calcio", "Escandio", "Titanio", "Vanadio", "Cromo", "Manganeso", "Hierro", "Cobalto", "Niquel", "Cobre", "Zinc", "Galio", "Germanio", "Arsenico", "Selenio", "Bromo", "Cripton", "Rubidio", "Estroncio", "Itrio", "Zirconio", "Niobio", "Molibdeno", " Tecnecio", "Rutenio", "Rodio", "Paladio", "Plata", "Cadmio", "Indio", "Estaño", "Antimonio", "Telurio", "Yodo", "Xenon", "Cesio", "Bario", "Lantano", "Cerio", "Praseodimio", "Neodimio", "Prometio", "Samario", "Europio", "Gadolinio", "Terbio", "Disprosio", "Holmio", "Erbio", "Tulio", "Iterbio", "Lutecio", "Hafnio", "Tantalio", "Tungsteno", "Renio", "Osmio", "Iridio", "Platino", "Oro", "Mercurio", "Talio", "Plomo", "Bismuto", "Polonio", "Astato", "Radon", "Francio", "Radio", "Actinio", "Torio", "Protactinio", "Uranio", "Neptunio", "Plutonio", "Americio", "Curio", "Berkelio", "Californio", "Einstenio", "Fermio", "Mendelevio", "Nobelio", "Laurencio", "Rutherfodio", "Dubnio", "Seaborgio", "Bohrio", "Hassio", "Meitnerio", "Madveded", "Plutirio", "Darwanzio", "Tustrano", "Eristeneo", "Merchel", "Nectarten", "Efelio", "Oberon"};
+            string[] ElN = { "Hidrogeno", "Helio", "Litio", "Berilio", "Boro", "Carbono", "Nitrogeno", "Oxigeno", "Fluor", "Neon", "Sodio", "Magnesio", "Aluminio", "Silicio", "Fosforo", "Azufre", "Cloro", "Argon", "Potasio", "Calcio", "Escandio", "Titanio", "Vanadio", "Cromo", "Manganeso", "Hierro", "Cobalto", "Niquel", "Cobre", "Zinc", "Galio", "Germanio", "Arsenico", "Selenio", "Bromo", "Cripton", "Rubidio", "Estroncio", "Itrio", "Zirconio", "Niobio", "Molibdeno", " Tecnecio", "Rutenio", "Rodio", "Paladio", "Plata", "Cadmio", "Indio", "Estaño", "Antimonio", "Telurio", "Yodo", "Xenon", "Cesio", "Bario", "Lantano", "Cerio", "Praseodimio", "Neodimio", "Prometio", "Samario", "Europio", "Gadolinio", "Terbio", "Disprosio", "Holmio", "Erbio", "Tulio", "Iterbio", "Lutecio", "Hafnio", "Tantalio", "Tungsteno", "Renio", "Osmio", "Iridio", "Platino", "Oro", "Mercurio", "Talio", "Plomo", "Bismuto", "Polonio", "Astato", "Radon", "Francio", "Radio", "Actinio", "Torio", "Protactinio", "Uranio", "Neptunio", "Plutonio", "Americio", "Curio", "Berkelio", "Californio", "Einstenio", "Fermio", "Mendelevio", "Nobelio", "Laurencio", "Rutherfodio", "Dubnio", "Seaborgio", "Bohrio", "Hassio", "Meitnerio", "Madveded", "Plutirio", "Darwanzio", "Tustrano", "Eristeneo", "Merchel", "Nectarten", "Efelio", "Oberon" };
 
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
@@ -130,7 +130,7 @@ namespace Menu_v1
                         // Mn2[4] = "Volver";
                         c = Menu(Mn2, 4);
                         switch (c)
-                        {       
+                        {
                             case 1:
                             inco:
                                 string[] incog = new string[4];
@@ -1110,7 +1110,7 @@ namespace Menu_v1
                     {
                         Console.Clear();
 
-                str = new string[] {     " 000   0 0  00  00   00 00   0000   000   ",
+                        str = new string[] {     " 000   0 0  00  00   00 00   0000   000   ",
                                          "0   0  0 0  00  0000000 00  0      00 00  ",
                                          "0   0  0 0  00  00 0 00 00  0      00000  ",
                                          "0   0  0 0  00  00   00 00  0      00 00  ",
@@ -1131,30 +1131,31 @@ namespace Menu_v1
                             case 1:
                                 goto MenuQu;
                             case 2:
-                                string ElX, NumsOx="";
+                                string ElX, NumsOx;
                             MenuElementos:
                                 Console.Clear();
                                 Console.Write("Ingresa el elemento quimico que buscas :");
-                                ElX = Console.ReadLine();
+                                ElX = Console.ReadLine().ToLower();
 
                                 for (int nA = 0; nA < 117; nA++)
                                 {
 
-                                    if (ElX == El[nA])
+                                    if (ElX.Equals(El[nA].ToLower()) || ElX.Equals((ElN[nA]).ToLower()))
                                     {
 
                                         Console.WriteLine();
                                         Console.WriteLine("---------------------------------------------------");
-                                        Console.WriteLine("El elemento es : " + ElN[nA] + "   " + (nA + 1) + " ");
+                                        Console.WriteLine("El elemento es : " + El[nA]);
                                         Console.WriteLine("---------------------------------------------------");
-                                        Console.WriteLine("El numero atomico es : "+ (nA + 1));
+                                        Console.WriteLine("El numero atomico es : " + (nA + 1));
                                         Console.WriteLine("---------------------------------------------------");
                                         Console.WriteLine("Numero masico : " + ElMA[nA]);
                                         Console.WriteLine("---------------------------------------------------");
                                         Console.Write("Numeros de oxidacion : ");
-                                    
+                                        NumsOx = "";
                                         for (int i = 0; i < 10; i++)
                                         {
+
 
                                             if (i != 9 && i > 0)
                                                 NumsOx += ", " + ElNO[nA, i];
@@ -1164,25 +1165,26 @@ namespace Menu_v1
                                         }
                                         Console.WriteLine(NumsOx);
                                         Console.WriteLine("---------------------------------------------------");
-                                        int nivelE =0;
+                                        int nivelE = 0;
                                         int almacen = nA + 1;
-                                        string sub="";
-                                        int almacen2 =0;
+                                        string sub = "";
+                                        int almacen2 = 0;
                                         string CE = "Configuracion electrionica: ";
                                         do
                                         {
                                             almacen2++;
-                                            if(almacen2<=2 && almacen2>0){//O
+                                            if (almacen2 <= 2 && almacen2 > 0)
+                                            {//O
                                                 nivelE = 1;
                                                 sub = "S";
                                             }
                                             if (almacen2 > 2 && almacen2 <= 10)
                                             {
                                                 nivelE = 2;
-                                                if(almacen2<=4)
-                                                sub = "S";
+                                                if (almacen2 <= 4)
+                                                    sub = "S";
                                                 else
-                                                sub = "P";
+                                                    sub = "P";
                                             }
                                             if (almacen2 > 10 && almacen2 <= 30)
                                             {
@@ -1191,27 +1193,27 @@ namespace Menu_v1
                                                     sub = "S";
                                                     nivelE = 3;
                                                 }
-                                                else if(almacen2 > 12 && almacen2 <= 18)
+                                                else if (almacen2 > 12 && almacen2 <= 18)
                                                 {
                                                     sub = "P";
                                                     nivelE = 3;
                                                 }
-                                             
+
                                                 else if (almacen2 > 20 && almacen2 <= 30)
                                                 {
                                                     sub = "D";
                                                     nivelE = 3;
-                                                } 
+                                                }
                                             }
                                             if (almacen2 > 18 && almacen2 <= 70)
                                             {
-                                              
+
                                                 if (almacen2 == 19 || almacen2 == 20)
                                                 {
                                                     sub = "S";
                                                     nivelE = 4;
                                                 }
-                                              
+
                                                 else if (almacen2 > 30 && almacen2 <= 36)
                                                 {
                                                     sub = "P";
@@ -1222,7 +1224,7 @@ namespace Menu_v1
                                                     sub = "D";
                                                     nivelE = 4;
                                                 }
-                                                else  if (almacen2 > 56 && almacen2 <= 70)
+                                                else if (almacen2 > 56 && almacen2 <= 70)
                                                 {
                                                     sub = "F";
                                                     nivelE = 4;
@@ -1230,13 +1232,13 @@ namespace Menu_v1
                                             }
                                             if (almacen2 > 36 && almacen2 <= 102)
                                             {
-                                               
+
                                                 if (almacen2 == 37 || almacen2 == 38)
                                                 {
                                                     sub = "S";
                                                     nivelE = 5;
                                                 }
-                                             
+
                                                 else if (almacen2 > 48 && almacen2 <= 54)
                                                 {
                                                     sub = "P";
@@ -1274,22 +1276,22 @@ namespace Menu_v1
                                             }
                                             if (almacen2 > 86 && almacen2 <= 118)
                                             {
-                                             
+
                                                 if (almacen2 == 87 || almacen2 == 88)
                                                 {
                                                     sub = "S";
                                                     nivelE = 7;
                                                 }
-                                                else if (almacen2 > 112 && almacen2 <=118)
+                                                else if (almacen2 > 112 && almacen2 <= 118)
                                                 {
                                                     sub = "P";
                                                     nivelE = 7;
                                                 }
-                                            
+
                                             }
 
-                                            if(almacen2!=almacen)
-                                                CE = CE  + nivelE + sub + ", ";
+                                            if (almacen2 != almacen)
+                                                CE = CE + nivelE + sub + ", ";
                                             else
                                                 CE = CE + nivelE + sub;
 
@@ -1303,7 +1305,7 @@ namespace Menu_v1
                                             7s 7p
                                             1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d, 7p
                                              */
-                                        } while (almacen2!=almacen);
+                                        } while (almacen2 != almacen);
 
                                         Console.WriteLine(CE);
                                         Console.ReadKey();
@@ -1312,37 +1314,30 @@ namespace Menu_v1
                                     else if (nA == 116 && ElX != El[nA])
                                     {
                                         Console.Clear();
-                                        
-                                        Console.ReadKey();
-                                        goto MenuElementos;
                                         string[] volverintentar = new string[3];
                                         volverintentar[0] = "ERROR al buscar elemento quimico que buscas :" + ElX;
-                                        volverintentar [1]= "Volver a intentar";
-                                        volverintentar [2]= "Regresar al menu Quimica";
-                                        c = Menu(Mn1, 3);
-                                        switch(c)
+                                        volverintentar[1] = "Volver a intentar";
+                                        volverintentar[2] = "Regresar al menu Quimica";
+
+                                        Console.WriteLine(volverintentar[0]);
+                                        Console.WriteLine(volverintentar[1]);
+                                        Console.WriteLine(volverintentar[2]);
+
+
+                                        c = Menu(volverintentar, 3);
+                                        switch (c)
                                         {
                                             case 1:
                                                 goto MenuElementos;
-                                                break;
                                             case 2:
                                                 goto MenuQu;
-                                                break;
                                         }
-
                                     }
-
-
                                 }
-
-
-
-
-
-
                                 goto MenuQu;
-                            case 4:
+                            case 3:
                                 goto MenuPr;
+
                             default:
                                 break;
                         }

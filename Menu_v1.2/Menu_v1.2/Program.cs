@@ -1131,7 +1131,7 @@ namespace Menu_v1
                             case 1:
                                 goto MenuQu;
                             case 2:
-                                string ElX;
+                                string ElX, NumsOx="";
                             MenuElementos:
                                 Console.Clear();
                                 Console.Write("Ingresa el elemento quimico que buscas :");
@@ -1147,29 +1147,31 @@ namespace Menu_v1
                                         Console.WriteLine("---------------------------------------------------");
                                         Console.WriteLine("El elemento es : " + ElN[nA] + "   " + (nA + 1) + " ");
                                         Console.WriteLine("---------------------------------------------------");
+                                        Console.WriteLine("El numero atomico es : "+ (nA + 1));
+                                        Console.WriteLine("---------------------------------------------------");
                                         Console.WriteLine("Numero masico : " + ElMA[nA]);
                                         Console.WriteLine("---------------------------------------------------");
                                         Console.Write("Numeros de oxidacion : ");
                                     
                                         for (int i = 0; i < 10; i++)
                                         {
-                                           
-                                            Console.Write(ElNO[nA, i]);
-                                                if(i!=9)
-                                                Console.Write(",");
+
+                                            if (i != 9 && i > 0)
+                                                NumsOx += ", " + ElNO[nA, i];
+                                            else
+                                                NumsOx += ElNO[nA, i];
+
                                         }
-                                        Console.WriteLine();
+                                        Console.WriteLine(NumsOx);
                                         Console.WriteLine("---------------------------------------------------");
                                         int nivelE =0;
                                         int almacen = nA + 1;
-                                        string sub;
+                                        string sub="";
                                         int almacen2 =0;
                                         string CE = "Configuracion electrionica: ";
                                         do
                                         {
-
                                             almacen2++;
-
                                             if(almacen2<=2 && almacen2>0){//O
                                                 nivelE = 1;
                                                 sub = "S";
@@ -1184,55 +1186,106 @@ namespace Menu_v1
                                             }
                                             if (almacen2 > 10 && almacen2 <= 30)
                                             {
-                                                nivelE = 3;
-                                                if (almacen2 == 11 || lmacen2 == 12)
+                                                if (almacen2 == 11 || almacen2 == 12)
+                                                {
                                                     sub = "S";
+                                                    nivelE = 3;
+                                                }
                                                 else if(almacen2 > 12 && almacen2 <= 18)
+                                                {
                                                     sub = "P";
+                                                    nivelE = 3;
+                                                }
+                                             
                                                 else if (almacen2 > 20 && almacen2 <= 30)
+                                                {
                                                     sub = "D";
+                                                    nivelE = 3;
+                                                } 
                                             }
                                             if (almacen2 > 18 && almacen2 <= 70)
                                             {
-                                                nivelE = 4;
-                                                if (almacen2 == 19 || lmacen2 == 20)
+                                              
+                                                if (almacen2 == 19 || almacen2 == 20)
+                                                {
                                                     sub = "S";
+                                                    nivelE = 4;
+                                                }
+                                              
                                                 else if (almacen2 > 30 && almacen2 <= 36)
+                                                {
                                                     sub = "P";
+                                                    nivelE = 4;
+                                                }
                                                 else if (almacen2 > 38 && almacen2 <= 48)
+                                                {
                                                     sub = "D";
+                                                    nivelE = 4;
+                                                }
                                                 else  if (almacen2 > 56 && almacen2 <= 70)
+                                                {
                                                     sub = "F";
+                                                    nivelE = 4;
+                                                }
                                             }
-                                            if (almacen2 > 28 && almacen2 <= 92)
+                                            if (almacen2 > 36 && almacen2 <= 102)
                                             {
-                                                nivelE = 5;
-                                                if (almacen2 == 37 || lmacen2 == 38)
+                                               
+                                                if (almacen2 == 37 || almacen2 == 38)
+                                                {
                                                     sub = "S";
+                                                    nivelE = 5;
+                                                }
+                                             
                                                 else if (almacen2 > 48 && almacen2 <= 54)
+                                                {
                                                     sub = "P";
+                                                    nivelE = 5;
+                                                }
                                                 else if (almacen2 > 70 && almacen2 <= 80)
+                                                {
                                                     sub = "D";
-                                                else
+                                                    nivelE = 5;
+                                                }
+                                                else if (almacen2 > 88 && almacen2 <= 102)
+                                                {
                                                     sub = "F";
+                                                    nivelE = 5;
+                                                }
                                             }
-                                            if (almacen2 > 92 && almacen2 <= 110)
+                                            if (almacen2 > 54 && almacen2 <= 112)
                                             {
                                                 nivelE = 6;
-                                                if (almacen2 == 93 || lmacen2 == 94)
+                                                if (almacen2 == 55 || almacen2 == 56)
+                                                {
                                                     sub = "S";
-                                                else if (almacen2 > 94 && almacen2 <= 100)
+                                                    nivelE = 6;
+                                                }
+                                                else if (almacen2 > 80 && almacen2 <= 86)
+                                                {
                                                     sub = "P";
-                                                else if (almacen2 > 100 && almacen2 <= 110)
+                                                    nivelE = 6;
+                                                }
+                                                else if (almacen2 > 102 && almacen2 <= 112)
+                                                {
                                                     sub = "D";
+                                                    nivelE = 6;
+                                                }
                                             }
-                                            if (almacen2 > 110 && almacen2 <= 118)
+                                            if (almacen2 > 86 && almacen2 <= 118)
                                             {
-                                                nivelE = 7;
-                                                if (almacen2 <= 112)
+                                             
+                                                if (almacen2 == 87 || almacen2 == 88)
+                                                {
                                                     sub = "S";
+                                                    nivelE = 7;
+                                                }
                                                 else if (almacen2 > 112 && almacen2 <=118)
+                                                {
                                                     sub = "P";
+                                                    nivelE = 7;
+                                                }
+                                            
                                             }
 
                                             if(almacen2!=almacen)
